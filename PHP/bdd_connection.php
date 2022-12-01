@@ -50,4 +50,23 @@ function sgbd_execute_prepared_requete($reqToPrepare, $param, $isProducingResult
 
     return $stmt;
 }
+
+function execute_requete_return_last_id($req) {
+	// connexion
+	$db = new mysqli($dbhost, $dblogin, $dbpass, $dbname, 3306);
+
+	if ($db->connect_errno) {
+		$msg = "Echec lors de la connection MySQL : (";
+		$msg.= $db->connect_errno;
+		$msg.= ") ";
+		$msg.= $db->connect_error;
+		die ($msg);
+	} else {
+		$db->query($req);
+		$id=mysqli_insert_id($db);
+		$db->close();
+
+		return $id;
+	}
+}
 ?>
