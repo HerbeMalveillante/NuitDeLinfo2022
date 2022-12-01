@@ -1,5 +1,5 @@
 <?php
-// Envoi JSON : 
+// Envoi JSON :
 include "bdd_connection.php";
 
 session_start();
@@ -25,7 +25,7 @@ if ($data['action']=="SESSION" ) {
 }
 
 // ------------------------------------------ Renvoi Data Discussion ------------------------------------------
-// Envoi JSON : {action:DISCUSSION, recherche:"Truc", page:int()} -> 
+// Envoi JSON : {action:DISCUSSION, recherche:"Truc", page:int()} ->
 if ($data['action']=="DISCUSSION" ) {
     // Pas de recherche
 	$recherche=trim($data['recherche']);
