@@ -26,3 +26,24 @@ if ($data['action']=="SESSION" ) {
 		exit();
 	}
 }
+
+function execute_requete_return_last_id($req) {
+	// connexion
+	$dblogin='root';
+	$dbpass='';
+	$db = new mysqli("localhost", $dblogin, $dbpass, "Reservation", 3306);
+
+	if ($db->connect_errno) {
+		$msg = "Echec lors de la connection MySQL : (";
+		$msg.= $db->connect_errno;
+		$msg.= ") ";
+		$msg.= $db->connect_error;
+		die ($msg);
+	} else {
+		$db->query($req);
+		$id=mysqli_insert_id($db);
+		$db->close();
+
+		return $id;
+	}
+}

@@ -39,7 +39,10 @@ if ($data['action']=="DISCUSSION" ) {
 
         exit();
     } else {
-    	
+    	$sql="SELECT `titre`, `dateCréation`, discussion.username, COUNT(idMessage) FROM `discussion` 
+				LEFT JOIN message ON message.idDiscussion=discussion.idDiscussion
+				ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
+		$result = sgbd_execute_prepared_requete($reqToPrepare, $param)
     }
 
 }
