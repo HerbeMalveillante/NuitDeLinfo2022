@@ -1,6 +1,6 @@
 papillomavirus
     Introduction:
-        Maladie extrêmement répandue. Les souches sont majoritairement bénines.
+        Maladie extrêmement répandue et très contagieux. Les souches sont majoritairement bénines.
         Ils sont responsables de 70% des cancers du col de l’utérus. La contamination se fait le plus souvent dans les premières années de la vie sexuelle plus de 70% des femmes sont exposées à ces virus au cours de leur vie.
     Prévention:
         Les préservatifs préservent imparfaitement contre la maladie, il est recommandé de se faire vacciner dès 11 ans. Le vaccin permet de protéger des souches les plus dangereuses.
@@ -9,4 +9,4 @@ papillomavirus
         - les condilomes externes (bénins): sont des verrues génitales apparaissant sur la verge, la vulve, autour du vagin ou de l’anus. Rarement, ils entraînent des démangeaisons. Ils peuvent parfois revenir après le traitement.
         - les lésions « pré-cancéreuses » sont très rarement décelables à l’œil nu. La plupart du temps, elles peuvent être trouvées au niveau du col de l’utérus ou du canal anal. On peut les détecter par frottis du col utérin.
         On peut aussi attraper le cancer du col de l'utérus
-
+Transmission:
