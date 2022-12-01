@@ -41,8 +41,9 @@ if ($data['action']=="DISCUSSION" ) {
 
         exit();
     } else {
-    	$sql="SELECT `discussion`.idDiscussion as idDiscussion, `titre`, `dateCréation`, discussion.username, COUNT(idMessage) FROM `discussion` 
-		LEFT JOIN message ON message.idDiscussion=discussion.idDiscussion 
+    	$sql="SELECT `discussion`.idDiscussion as idDiscussion, `titre`, `dateCréation`, discussion.username, 
+			(SELECT COUNT(*) FROM discussion 
+			JOIN message ON message.idDiscussion=discussion.idDiscussion) as messages FROM `discussion` 
 		LEFT JOIN discussion_possede_categorie on discussion_possede_categorie.idDiscussion=discussion.idDiscussion 
 		LEFT JOIN categorie on categorie.idCategorie=discussion_possede_categorie.idCategorie 
 		WHERE titre LIKE '%?%' OR nom LIKE '%?%' ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
