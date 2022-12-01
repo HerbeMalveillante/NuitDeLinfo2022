@@ -25,10 +25,20 @@ if ($data['action']=="SESSION" ) {
 }
 
 // ------------------------------------------ Renvoi Data Discussion ------------------------------------------
-// Envoi JSON : {action:DISCUSSION}
+// Envoi JSON : {action:DISCUSSION, recherche:"Truc", page:int()} -> 
 if ($data['action']=="DISCUSSION" ) {
+    // Pas de recherche
+    if (trim($data['recherche'])=="") {
+        $sql="SELECT `idDiscussion`, `titre`, `dateCréation` FROM `discussion` 
+                ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
+        $result = sgbd_execute_requete($sql);
 
-    
+        $jsonData = $result->fetch_all(MYSQLI_ASSOC);
+        echo json_encode($jsonData);
+
+        exit();
+    }
+
 }
 
 ?>

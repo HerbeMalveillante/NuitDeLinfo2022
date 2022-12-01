@@ -8,7 +8,9 @@ CREATE TABLE Discussion(
    idDiscussion INT NOT NULL AUTO_INCREMENT,
    titre VARCHAR(50) NOT NULL,
    dateCréation DATETIME NOT NULL,
-   PRIMARY KEY(idDiscussion)
+   username VARCHAR(50) NOT NULL,
+   PRIMARY KEY(idDiscussion),
+   FOREIGN KEY(username) REFERENCES Compte(username)
 );
 
 CREATE TABLE Categorie(
