@@ -8,14 +8,10 @@ Ce fichier s'appelle le README. Il est censé expliquer en détails ce que fait 
 ## Comme un DevOps tu penseras :
 
 WikiFiesta : Utiliser wikimedia pour aller chercher des données
-Airbus X Prize on prend
 Escape Game : faire un jeu de piste sur une page secrète de l'app avec un "mot de passe" ou autre énigme à résoudre grâce à des indices sur le site
 Un produit bien sécurisé vous épargne les attaques -> sécuriser
 "- x - = +" -> faisable encore un truc user friendly
-Défi CAPTCHA -> faire un captcha original créativité etc, testés par des ingés et des vrais robots
-TOOLPAD -> faire des animations sur le site web
 Submit me if you can ! -> Cacher le bouton submit si jamais le form est pas bon
-Le défi 3, 2, 1 action -> PUBLICITÉ DU PRODUIT
 
 ---
 
