@@ -30,8 +30,9 @@ if ($data['action']=="DISCUSSION" ) {
     // Pas de recherche
 	$recherche=trim($data['recherche']);
     if ($recherche=="") {
-        $sql="SELECT `discussion`.idDiscussion as idDiscussion, `titre`, `dateCréation`, discussion.username, COUNT(idMessage) as messages FROM `discussion` 
-				LEFT JOIN message ON message.idDiscussion=discussion.idDiscussion
+        $sql="SELECT `discussion`.idDiscussion as idDiscussion, `titre`, `dateCréation`, discussion.username, 
+					(SELECT COUNT(*) FROM discussion 
+					JOIN message ON message.idDiscussion=discussion.idDiscussion) as messages FROM `discussion` 
 				ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
         $result = sgbd_execute_requete($sql);
 

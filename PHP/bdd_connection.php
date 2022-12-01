@@ -40,7 +40,7 @@ function sgbd_execute_prepared_requete($reqToPrepare, $param, $isProducingResult
     
     $stmt = $db->stmt_init();
     $stmt->prepare($reqToPrepare);
-    $stmt->bind_param('s', ...$param);
+    $stmt->bind_param('ss', ...$param);
     $stmt->execute();
     if ($isProducingResult) {
         $result = $stmt->get_result();
