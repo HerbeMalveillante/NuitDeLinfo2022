@@ -47,3 +47,10 @@ function execute_requete_return_last_id($req) {
 		return $id;
 	}
 }
+
+
+
+INSERT INTO `discussion`(`idDiscussion`, `titre`, `dateCréation`, `username`) VALUES 
+('[value-1]','[value-2]','[value-3]','[value-4]'),
+('[value-1]','[value-2]','[value-3]','[value-4]'),
+('[value-1]','[value-2]','[value-3]','[value-4]'),
