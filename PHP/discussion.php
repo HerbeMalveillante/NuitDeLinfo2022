@@ -29,8 +29,7 @@ if ($data['action']=="SESSION" ) {
 if ($data['action']=="DISCUSSION" ) {
     // Pas de recherche
     if (trim($data['recherche'])=="") {
-        $sql="SELECT `titre`, `dateCréation`, username,  FROM `discussion` 
-        		JOIN 
+        $sql="SELECT `titre`, `dateCréation`, username FROM `discussion` 
                 ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
         $result = sgbd_execute_requete($sql);
 
