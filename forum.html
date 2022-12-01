@@ -6,6 +6,38 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.tailwindcss.com"></script>
 		<title>FORUM</title>
+
+		<script>
+			function sendAjaxJSON(url, cFunction, donnees) {
+				// url : url du fichier php
+				// cFunction : nom de la fct qui utilise les données renvoyées
+				// donnees : json des données à envoyer
+				const xhttp = new XMLHttpRequest();
+				xhttp.onload = function () {
+					cFunction(this);
+				};
+				xhttp.open("POST", url);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
+			}
+
+			// ------------------------------------------ Check Session ------------------------------------------
+			function usingCheckSession(xhttp) {
+				const myObj = JSON.parse(xhttp.responseText)["response"];
+
+				if (myObj["response"] == 0) {
+					window.alert("Vous n'êtes pas connecté");
+				}
+			}
+
+			const jsonCheckSession = {
+				action: "SESSION",
+			};
+
+			sendAjaxJSON("bonjour.php", usingCheckSession, jsonCheckSession);
+
+			window.onload = function () {};
+		</script>
 	</head>
 	<body class="p-0 m-0 h-screen">
 		<!-- NAVBAR -->
