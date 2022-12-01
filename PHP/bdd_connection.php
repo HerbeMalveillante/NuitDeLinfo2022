@@ -27,6 +27,17 @@ function sgbd_execute_requete($req) {
     }
 }
 
+function refValues($arr){
+    if (strnatcmp(phpversion(),'5.3') >= 0) //Reference is required for PHP 5.3+
+    {
+        $refs = array();
+        foreach($arr as $key => $value)
+            $refs[$key] = &$arr[$key];
+        return $refs;
+    }
+    return $arr;
+}
+
 function sgbd_execute_prepared_requete($reqToPrepare, $param, $isProducingResult=true) {
     // $reqToPrepare : str de SQL avec placeholder (?)
     // $param : array de type [$donnee1, $donnee2, ...]
@@ -40,7 +51,12 @@ function sgbd_execute_prepared_requete($reqToPrepare, $param, $isProducingResult
     
     $stmt = $db->stmt_init();
     $stmt->prepare($reqToPrepare);
-    $stmt->bind_param('ss', ...$param);
+    // nb de valeur dans $params pour le "s"
+    $strTypes="";
+    for ($i=0; $i < count($param); $i++) { 
+        $strTypes.="s";
+    }
+    $stmt->bind_param($strTypes, ...$param );
     $stmt->execute();
     if ($isProducingResult) {
         $result = $stmt->get_result();
