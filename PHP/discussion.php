@@ -29,7 +29,7 @@ if ($data['action']=="SESSION" ) {
 if ($data['action']=="DISCUSSION" ) {
     // Pas de recherche
     if (trim($data['recherche'])=="") {
-        $sql="SELECT `titre`, `dateCréation`, discussion.username, COUNT(idMessage) FROM `discussion`
+        $sql="SELECT `titre`, `dateCréation`, discussion.username, COUNT(idMessage) as messages FROM `discussion`
 				LEFT JOIN message ON message.idDiscussion=discussion.idDiscussion
 				ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
         $result = sgbd_execute_requete($sql);
@@ -39,7 +39,7 @@ if ($data['action']=="DISCUSSION" ) {
 
         exit();
     } else {
-    	$sql="SELECT `titre`, `dateCréation`, discussion.username, COUNT(idMessage) FROM `discussion`
+    	$sql="SELECT `titre`, `dateCréation`, discussion.username, COUNT(idMessage) as messages FROM `discussion`
 				LEFT JOIN message ON message.idDiscussion=discussion.idDiscussion
 				ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
 		$result = sgbd_execute_prepared_requete($reqToPrepare, $param);
