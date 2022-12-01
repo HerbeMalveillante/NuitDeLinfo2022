@@ -1,0 +1,38 @@
+CREATE TABLE Compte(
+   username VARCHAR(50),
+   mdp VARCHAR(50) NOT NULL,
+   PRIMARY KEY(username)
+);
+
+CREATE TABLE Discussion(
+   idDiscussion INT NOT NULL AUTO_INCREMENT,
+   titre VARCHAR(50) NOT NULL,
+   dateCréation DATETIME NOT NULL,
+   PRIMARY KEY(idDiscussion)
+);
+
+CREATE TABLE Categorie(
+   idCategorie INT NOT NULL AUTO_INCREMENT,
+   nom VARCHAR(50) NOT NULL,
+   couleur VARCHAR(50) NOT NULL,
+   PRIMARY KEY(idCategorie)
+);
+
+CREATE TABLE Message(
+   idMessage INT NOT NULL AUTO_INCREMENT,
+   dateMessage DATETIME NOT NULL,
+   content TEXT NOT NULL,
+   idDiscussion INT NOT NULL,
+   username VARCHAR(50) NOT NULL,
+   PRIMARY KEY(idMessage),
+   FOREIGN KEY(idDiscussion) REFERENCES Discussion(idDiscussion),
+   FOREIGN KEY(username) REFERENCES Compte(username)
+);
+
+CREATE TABLE Discussion_possede_Categorie(
+   idDiscussion INT,
+   idCategorie INT,
+   PRIMARY KEY(idDiscussion, idCategorie),
+   FOREIGN KEY(idDiscussion) REFERENCES Discussion(idDiscussion),
+   FOREIGN KEY(idCategorie) REFERENCES Categorie(idCategorie)
+);
