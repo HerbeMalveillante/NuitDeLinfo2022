@@ -6,3 +6,5 @@ Ce fichier s'appelle le README. Il est censé expliquer en détails ce que fait 
 Libre à vous de le mettre à jour au fur et à mesure de l'avancement du projet. De tout de façon grâce à GitHub on verra qui a codé quoi et à quelle heure. Clara
 
 abricot
+Libre à vous de le mettre à jour au fur et à mesure de l'avancement du projet. De tout de façon grâce à GitHub on verra qui a codé quoi et à quelle heure. Clara <- Bof
+coucou
