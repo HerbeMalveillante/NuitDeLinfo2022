@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>FORUM</title>
+	</head>
+	<body class="p-0 m-0 h-screen">
+		<!-- NAVBAR -->
+		<nav class="flex p-2 items-center justify-between">
+			<img class="h-16" src="../static/logo.svg" alt="" />
+			<svg
+				class="h-16"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</nav>
+		<!-- End of the navbar -->
+
+		<!-- Search bar and create button -->
+		<div class="flex gap-3 text-white font-bold p-2 mt-5">
+			<!-- Recherche -->
+			<div
+				class="w-2/3 bg-gray-200 border-2 border-gray-500 rounded-full px-2 flex items-center justify-between text-gray-500"
+			>
+				<input type="text" placeholder="Rechercher" class="p-2 w-full bg-transparent" />
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+					/>
+				</svg>
+			</div>
+			<!-- End Recherche -->
+
+			<!-- Écrire -->
+			<div
+				class="w-1/3 bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md border-0 hover:border-2 hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer"
+			>
+				<p>Écrire</p>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+					/>
+				</svg>
+			</div>
+			<!-- End Écrire -->
+		</div>
+		<!-- End of Search bar and create button -->
+
+		<!--post list -->
+		<div class="border-2 border-pink-300 m-3 p-2 pb-4 pt-4 h-3/5 rounded-md overflow overflow-scroll">
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+			<!--post-->
+			<div class="flex justify-between border-b-2 border-b-gray-400 pb-1">
+				<div class="">
+					<div class="font-bold text-pink-800 hover:underline cursor-pointer">Lorem Ipsum Dolor Si Amet</div>
+					<div class="p-0">John Smith</div>
+				</div>
+				<div class="flex flex-col items-end text-gray-500">
+					<div>1/12/22 - 21:55</div>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+							/>
+						</svg>
+						<p>12</p>
+					</div>
+				</div>
+			</div>
+			<!--end of post-->
+		</div>
+		<!-- End of post list -->
+
+		<!-- Refresh / Pagination -->
+		<div class="flex justify-center gap-2 mt-5 text-white">
+			<div
+				class="bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M11.25 9l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+					/>
+				</svg>
+				<p>Préc.</p>
+			</div>
+			<div
+				class="bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Actualiser</p>
+			</div>
+			<div
+				class="bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Suiv.</p>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+					/>
+				</svg>
+			</div>
+		</div>
+		<!-- End of Refresh / Pagination -->
+
+		<footer class="absolute bottom-2 w-full">
+			<div class="flex justify-center gap-1">
+				Fait avec amour par OverFlop 3.7 pour la
+				<a class="text-pink-400 underline" href="https://www.nuitdelinfo.com/">Nuit de l'info 2022</a>
+			</div>
+		</footer>
+	</body>
+</html>
