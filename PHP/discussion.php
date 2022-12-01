@@ -29,7 +29,8 @@ if ($data['action']=="SESSION" ) {
 if ($data['action']=="DISCUSSION" ) {
     // Pas de recherche
     if (trim($data['recherche'])=="") {
-        $sql="SELECT `idDiscussion`, `titre`, `dateCréation` FROM `discussion` 
+        $sql="SELECT `titre`, `dateCréation`, username,  FROM `discussion` 
+        		JOIN 
                 ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
         $result = sgbd_execute_requete($sql);
 
@@ -37,6 +38,8 @@ if ($data['action']=="DISCUSSION" ) {
         echo json_encode($jsonData);
 
         exit();
+    } else {
+    	
     }
 
 }

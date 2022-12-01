@@ -6,8 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="//unpkg.com/alpinejs" defer></script>
 
 		<script>
 			function sendAjaxJSON(url, cFunction, donnees) {
@@ -26,22 +24,22 @@
 			// ------------------------------------------ Check Session ------------------------------------------
 			function usingCheckSession(xhttp) {
 				const myObj = JSON.parse(xhttp.responseText);
-				document.getElementById("variable").innerHTML = myObj["response"];
+				
+				console.log(myObj);
 			}
 
 			const jsonCheckSession = {
-				action: "SESSION",
+				action: "DISCUSSION",
+				recherche:"", 
+				page:1
 			};
 
 			window.onload = function () {
-				sendAjaxJSON("bonjour.php", usingCheckSession, jsonCheckSession);
+				sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
 			};
 		</script>
 	</head>
 	<body class="">
-		<h1 id="variable">...</h1>
-		<div id="gamecontainer" class="flex border-2 border-red-500 justify-center">
-			<script type="module" src="game.js"></script>
-		</div>
+		<h1 id="variable"></h1>
 	</body>
 </html>
