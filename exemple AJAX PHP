@@ -8,3 +8,21 @@ $jsonError  = array("type" => "error", "response" => "L'email n'existe pas.");
 
 echo json_encode($jsonError);
 break;
+
+// ------------------------------------------ Check Session ------------------------------------------
+if ($data['action']=="SESSION" ) {
+
+	// Il n'y a pas de session ou pas de session d'un Admin
+	if (!isset($_SESSION['id']) or $_SESSION['type']!="ADMIN") {
+		$jsonError = ["response" => 1];
+
+		echo json_encode($jsonError);
+
+		exit();
+	} else {
+		$jsonError = ["response" => 0];
+		echo json_encode($jsonError);
+
+		exit();
+	}
+}
