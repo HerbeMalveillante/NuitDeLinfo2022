@@ -1,0 +1,10 @@
+$data = json_decode($_POST["json"], true);
+$userEmail = trim($data['email']);
+$userMdp = trim($data['mdp']);
+
+
+// Pour le renvoi
+$jsonError  = array("type" => "error", "response" => "L'email n'existe pas.");
+
+echo json_encode($jsonError);
+break;
