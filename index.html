@@ -6,47 +6,69 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-		<script>
-			function sendAjaxJSON(url, cFunction, donnees) {
-				// url : url du fichier php
-				// cFunction : nom de la fct qui utilise les données renvoyées, "" si pas de fct
-				// donnees : json des données à envoyer
-				const xhttp = new XMLHttpRequest();
-				if (cFunction!="") {
-					xhttp.onload = function () {
-						cFunction(this);
-					};
-				}
-				xhttp.open("POST", url);
-				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
-			}
-
-			// ------------------------------------------ Check Session ------------------------------------------
-			function usingCheckSession(xhttp) {
-				const myObj = JSON.parse(xhttp.responseText);
-
-				console.log(myObj);
-			}
-
-			const jsonCheckSession = {action:"ADDMESSAGE", idDiscussion:1, content:"Chaussure"};
-
-			window.onload = function () {
-				sendAjaxJSON("PHP/message.php", "", jsonCheckSession);
-			};
-		</script>
+		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body class="">
-<<<<<<< Updated upstream
-		<h1 id="variable"></h1>
-=======
-		Hello World !
-		<div id="gamecontainer" class="flex border-2 border-red-500 justify-center">
+		<!-- NAVBAR -->
+		<nav class="flex p-2 items-center justify-between">
+			<img src="static/logo.svg" class="h-16" alt="" />
+			<svg
+				class="h-16"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</nav>
+		<!-- End of the navbar -->
+
+		<div class="flex flex-col items-center justify-center m-6 bg-pink-200 rounded-xl p-2">
+			<h1 class="text-pink-800 text-2xl font-bold">Bienvenue sur Prévention IST !</h1>
+			<p class="text-center">
+				À l'occasion de la journée mondiale de la lutte contre le sida, l'équipe OverFlop 3.7 vous propose un
+				jeu de "conquête" pour en apprendre plus sur les IST et les bons gestes à adopter. Glissez-vous dans la
+				peau de Rouge, nouvel arrivant en ville, et faites de belles rencontres ! (contrôles : ZQSD / jeu
+				indisponible sur mobile)
+			</p>
+			<div
+				onclick="window.location.href='forum.html'"
+				class="mt-4 mb-2 w-5/6 text-white bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Visiter le forum</p>
+			</div>
+		</div>
+
+		<div id="gamecontainer" class="flex justify-center mt-10 mb-10">
 			<canvas id="PanelJeu" width="600" height="600"></canvas>
 			<script type="module" src="game.js"></script>
 		</div>
-		test
->>>>>>> Stashed changes
+
+		<div class="flex flex-col items-center justify-center m-6 bg-pink-200 rounded-xl p-2">
+			<h1 class="text-pink-800 text-2xl font-bold">Visitez notre forum !</h1>
+			<p class="text-center">
+				Dans l'anonymat le plus total, venez discuter de votre expérience avec les IST et les moyens de les
+				prévenir dans notre forum. Vous pouvez également y trouver des conseils pour vous protéger et des
+				témoignages de personnes qui ont vécu la même chose que vous.
+			</p>
+			<div
+				onclick="window.location.href='forum.html'"
+				class="mt-4 mb-2 w-5/6 text-white bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Rejoignez la communauté</p>
+			</div>
+		</div>
+
+		<footer class="w-full mb-2">
+			<div class="flex justify-center gap-1">
+				Fait avec amour par OverFlop 3.7 pour la
+				<a class="text-pink-400 underline" href="https://www.nuitdelinfo.com/">Nuit de l'info 2022</a>
+			</div>
+		</footer>
 	</body>
 </html>
