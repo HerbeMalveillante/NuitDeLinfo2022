@@ -51,20 +51,21 @@ if ($data['action']=="LOADMESSAGE" ) {
     echo json_encode($jsonData);
 
     exit();
-
 }
 
 // ------------------------------------------ Ajout Message ------------------------------------------
 // Envoi JSON : {action:ADDMESSAGE, idDiscussion:int(), content:str()}
 if ($data['action']=="ADDMESSAGE" ) {
-    $_SESSION['username']="John";
+    $_SESSION['username']="Johnson";
     
     $sql="INSERT INTO `message`( `dateMessage`, `content`, `idDiscussion`, `username`) VALUES 
             (NOW(), ?,".$data['idDiscussion'].",'".$_SESSION['username']."')";
-    $result = sgbd_execute_prepared_requete($sql, [$data['content']]);
+    $id = sgbd_execute_prepared_requete($sql, [$data['content']], false);
+
+    $sql="UPDATE `discussion` SET `dateDernierMessage `=NOW()
+            WHERE idDiscussion=6";
 
     exit();
-
 }
 
 ?>

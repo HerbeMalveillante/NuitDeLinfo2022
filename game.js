@@ -1,26 +1,49 @@
-import * as me from "https://esm.run/melonjs";
+import Chapter1 from "./chapter1.js";
+import Chapter2 from "./chapter2.js";
+import Chapter3 from "./chapter3.js";
 
-me.device.onReady(function () {
-	// initialize the display canvas once the device/browser is ready
-	me.video.init(800, 800, {
-		parent: "gamecontainer",
-		renderer: me.video.AUTO,
-		scale: "flex",
-		scaleMethod: "fit",
-	});
+var canvas = document.getElementById("PanelJeu");
+var width = canvas.width;
+var height = canvas.height;
 
-	// add a gray background to the default Stage
-	me.game.world.addChild(new me.ColorLayer("background", "#202020"));
+let chap1 = new Chapter1();
+let chap2 = new Chapter2();
+let chap3 = new Chapter3();
 
-	// add a font text display object
-	me.game.world.addChild(
-		new me.Text(50, 50, {
-			font: "Arial",
-			size: 20,
-			fillStyle: "#FFFFFF",
-			textBaseline: "middle",
-			textAlign: "center",
-			text: "Hello World !",
-		})
-	);
+var chapters = [chap1, chap2, chap3];
+let ChapIndex = 2;
+
+function update() {
+	if(chapters[ChapIndex].finished){
+		ChapIndex += 1
+	}
+}
+
+function draw() {
+	if (canvas.getContext) {
+		var ctx = canvas.getContext('2d');
+
+        ctx.clearRect(0, 0, width, height);
+
+		chapters[ChapIndex].draw(ctx);
+				
+	}
+	
+}
+
+function loop(timestamp) {
+	var progress = timestamp - lastRender
+  
+	update(progress)
+	draw()
+  
+	lastRender = timestamp
+	window.requestAnimationFrame(loop)
+}
+var lastRender = 0
+window.requestAnimationFrame(loop)
+
+
+$( "body" ).keypress(function(e) {
+	chapters[ChapIndex].update(e);
 });

@@ -1,0 +1,143 @@
+{
+	"num":16,
+    "slide":[
+        {
+            "id":1,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"",
+            "choice":["Oh pardon, ça va ? Pas trop mal ?", "Fais Attention où tu regardes ! "],
+            "answer":["Ça va, merci, il y a eu plus de peur que de mal.",""]
+        },
+        {
+            "id":2,
+            "idChar":2,
+            "action":1,
+            "legend":"",
+            "content":"Ouch, finalement je crois que je me suis foulé une cheville.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":3,
+            "idChar":1,
+            "action":0,
+            "legend":"???",
+            "content":"",
+            "choice":["Veux-tu de l'aide ?", "*Ne rien faire*"],
+            "answer":["","Peux-tu m’aider s’il te plait, je ne suis pas loin..."]
+        },
+        {
+            "id":4,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"*Cette personne est un vrai tombeur*",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":5,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Oui bien sur désolé, j’étais perdu dans mes pensées.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":6,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"*Cette personne est magnifique.*",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":7,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Oui, je veux bien de l’aide s’il vous plait, je ne suis pas loin.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":8,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"*Ce que cette personne est gentleman et classe aussi.*",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":9,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Appuie-toi sur moi, je vais te conduire devant",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":10,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"*Tout-à-fait mon type cette personne.*",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":11,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Désolé, effectivement c’est ma faute...",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":12,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"au fait mon nom est Rouge. Et toi ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":13,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Moi c’est Bleu.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":14,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Mon Apart est juste là, je t’offre un café ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":15,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Oui, Pourquoi pas. Merci.",
+            "choice":[],
+            "answer":[]
+        }
+    ]
+}
+
+
+

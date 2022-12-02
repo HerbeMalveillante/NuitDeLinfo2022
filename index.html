@@ -30,7 +30,7 @@
 				console.log(myObj);
 			}
 
-			const jsonCheckSession = {action:"INFODISCUSSION", idDiscussion:1};
+			const jsonCheckSession = {action:"ADDMESSAGE", idDiscussion:1, content:"Chaussure"};
 
 			window.onload = function () {
 				sendAjaxJSON("PHP/message.php", "", jsonCheckSession);
@@ -38,6 +38,15 @@
 		</script>
 	</head>
 	<body class="">
+<<<<<<< Updated upstream
 		<h1 id="variable"></h1>
+=======
+		Hello World !
+		<div id="gamecontainer" class="flex border-2 border-red-500 justify-center">
+			<canvas id="PanelJeu" width="600" height="600"></canvas>
+			<script type="module" src="game.js"></script>
+		</div>
+		test
+>>>>>>> Stashed changes
 	</body>
 </html>
