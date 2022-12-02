@@ -10,34 +10,27 @@ $data = json_decode($_POST["json"], true);
 
 #$_POST['categories'] = ["cat1", "cat2", "cat3"];
 
-if (!isset($data['titre'])){
-    exit("an error has occured");
-};
-if (!isset($data['categories'])){
-    exit("an error has occured");
-};
-if (!isset($data['action'])){
-    exit("an error has occured");
-};
 
-$user = "Patrick"  //$user = $_SESSION["username"];
+$user = "Patrick";  //$user = $_SESSION["username"];
 $titre = trim($data['titre']);
-$categories = trim($data['categories']); //une liste
-$action = rim($data['action']);
+$categories = $data['categories']; //une liste
+$description = trim($data['description']);
+$action = $data['action'];
 
 
 if ($action == "post"){
-    creation_discussion($user, $titre, $categories);
+    creation_discussion($user, $titre, $categories, $description);
 }
-elseif ($action == "catégories"){
+elseif ($action == "categories"){
     envoyer_catégories();
 };
 
-function creation_discussion($user, $titre, $categories){
+function creation_discussion($user, $titre, $categories, $description){
 
+    //Stockage de la date et de l'heure actuelle
     $date = new Datetime();
     $date_actuelle = $date->format("Y-m-d h:i:s");
-    $req = "INSERT INTO discussion(titre,dateCréation,username) VALUES('$titre',NOW(),'$user')";
+    $req = "INSERT INTO discussion(titre,dateCréation,username,description) VALUES('$titre',NOW(),'$user','$description')";
     $id = execute_requete_return_last_id($req); //permet d'executer la requete et de retourner l'id créé par l'auto-increment
 
     foreach ($categories as $categ){

@@ -5,7 +5,13 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<script src="https://cdn.tailwindcss.com"></script>
-		<title>Créer un post</title>
+		<script
+			src="https://cdn.jsdelivr.net/npm/jdenticon@3.2.0/dist/jdenticon.min.js"
+			async
+			integrity="sha384-yBhgDqxM50qJV5JPdayci8wCfooqvhFYbIKhv0hTtLvfeeyJMJCscRfFNKIxt43M"
+			crossorigin="anonymous"
+		></script>
+		<title>Post</title>
 
 		<script>
 			var nbPages = 1;
@@ -86,56 +92,19 @@
 		</nav>
 		<!-- End of the navbar -->
 
-		<div class="flex flex-col p-2 gap-3 mt-10 w-full">
-			<h1 class="text-pink-800 font-bold text-3xl">Créer un post</h1>
-			<input
-				id="titre"
-				class="bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-2"
-				type="text"
-				placeholder="Titre du post"
-			/>
-			<textarea
-				id="description"
-				class="bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-2"
-				rows="10"
-				placeholder="Contenu du post"
-			></textarea>
-			<h2 class="text-pink-800 font-bold text-xl">Catégories</h2>
-			<div class="grid grid-cols-2 gap-3 justify-center items-center">
-				<div class="flex items-center gap-1">
-					<input id="question" type="checkbox" />
-					<span>Question</span>
+		<!-- Main -->
+		<div class="mt-10 p-2">
+			<!--main post-->
+			<div>
+				<div class="flex gap-2">
+					<svg class="w-16" data-jdenticon-value="john"></svg>
+					<div class="flex flex-col">
+						<span class="text-pink-800 text-2xl font-bold">john</span>
+						<span class="text-gray-400">2022-12-02 03:07:21</span>
+					</div>
 				</div>
-				<div class="flex items-center gap-1">
-					<input id="temoignage" type="checkbox" />
-					<span>Témoignage</span>
-				</div>
-				<div class="flex items-center gap-1">
-					<input id="information" type="checkbox" />
-					<span>Information</span>
-				</div>
-				<div class="flex items-center gap-1">
-					<input id="humour" type="checkbox" />
-					<span>Humour</span>
-				</div>
+				<p class="text-red-600">Lorem, ipsum dolor si amet</p>
 			</div>
 		</div>
-
-		<div class="flex justify-center gap-2 text-white">
-			<div
-				onclick="window.location.href = 'forum.html';"
-				class="bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
-			>
-				<p>Annuler</p>
-			</div>
-			<div
-				onclick="submit()"
-				class="bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
-			>
-				<p>Publier</p>
-			</div>
-		</div>
-
-		<script></script>
 	</body>
 </html>
