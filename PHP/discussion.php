@@ -35,9 +35,13 @@ if ($data['action']=="DISCUSSION" ) {
 					JOIN message ON message.idDiscussion=discussion.idDiscussion) as messages FROM `discussion` 
 				ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
         $result = sgbd_execute_requete($sql);
-
         $jsonData = $result->fetch_all(MYSQLI_ASSOC);
-        echo json_encode($jsonData);
+
+		$sql="SELECT COUNT(*) as nbDiscussion FROM `discussion`";
+		$result = sgbd_execute_requete($sql);
+		$jsonNbDis = $result->fetch_assoc()["nbDiscussion"];
+		
+        echo json_encode(["nbDiscussion"=>$jsonNbDis,"data"=>$jsonData]);
 
         exit();
     } else {
@@ -49,9 +53,13 @@ if ($data['action']=="DISCUSSION" ) {
 		WHERE titre LIKE ? OR nom LIKE ? ORDER BY dateCréation DESC limit 10 offset ".strval(($data['page']-1)*10);
 		$recherche="%".$recherche."%";
 		$result = sgbd_execute_prepared_requete($sql, [$recherche, $recherche]); //sgbd_execute_prepared_requete($reqToPrepare, $param);
-
 		$jsonData = $result->fetch_all(MYSQLI_ASSOC);
-        echo json_encode($jsonData);
+        
+		$sql="SELECT COUNT(*) as nbDiscussion FROM `discussion`";
+		$result = sgbd_execute_requete($sql);
+		$jsonNbDis = $result->fetch_assoc()["nbDiscussion"];
+		
+        echo json_encode(["nbDiscussion"=>$jsonNbDis,"data"=>$jsonData]);
     };
 
 }
