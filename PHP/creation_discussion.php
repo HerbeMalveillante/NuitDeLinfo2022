@@ -8,15 +8,12 @@ if (!isset($_POST["json"])){ //  || !isset($_SESSION["username"])
 
 $data = json_decode($_POST["json"], true);
 
-#$_POST['categories'] = ["cat1", "cat2", "cat3"];
-
-
 
 $action = $data['action'];
 
 
 if ($action == "post"){
-    $user = "Patrick";  //$user = $_SESSION["username"];
+    $user = $_SESSION["username"];
     $titre = trim($data['titre']);
     $categories = $data['categories']; //une liste
     $description = trim($data['description']);
