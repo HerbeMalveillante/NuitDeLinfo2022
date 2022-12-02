@@ -1,0 +1,141 @@
+{
+	"num":19,
+    "slide":[
+        {
+            "id":1,
+            "idChar":-1,
+            "action":-1,
+            "legend":"",
+            "content":"Cher journal, je m’appelle, comme tu le sais, Rouge et j’emménage aujourd’hui dans ma nouvelle colocation.  Ça va être SUPER !!!."
+        },
+        {
+            "id":2,
+            "idChar":-1,
+            "action":-1,
+            "legend":"Jour 1",
+            "content":"* TOC TOC TOC *"
+        },
+        {
+            "id":3,
+            "idChar":2,
+            "action":0,
+            "legend":"???",
+            "content":"Tu peux entrer."
+        },
+        {
+            "id":4,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Salut, c’est toi mon nouveau coloc, je m’appelle Violet, et toi ?"
+        },
+        {
+            "id":5,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":" Moi, c’est Rouge, du coup, elle ressemble à ça la coloc ?"
+        },
+        {
+            "id":6,
+            "idChar":-1,
+            "action":-1,
+            "legend":"",
+            "content":"Le lendemain"
+        },
+        {
+            "id":7,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Tout va bien ? Tu as l’air abattu."
+        },
+        {
+            "id":8,
+            "idChar":2,
+            "action":1,
+            "legend":"",
+            "content":"Je viens d’apprendre que ma sœur a contracté le VIH"
+        },
+        {
+            "id":9,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Ah dur et comment elle va ?"
+        },
+        {
+            "id":10,
+            "idChar":2,
+            "action":1,
+            "legend":"",
+            "content":"Elle a de la fièvre et des maux de gorge. Un peu comme une grippe."
+        },
+        {
+            "id":11,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Mais comment elle fait pour ne pas le transmettre par inadvertance aux autres alors ? C’est super contagieux non ?"
+        },
+        {
+            "id":12,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Non dans les faits ce n’est pas si contagieux. Cela ne se transmet pas par les contacts physiques (baisers , étreintes, poignées de mains), ..."
+        },
+        {
+            "id":13,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"... Ni par les miasmes déposés par le corps ( cuvettes des toilettes ), ni par le partage de nourriture, ou encore les piqures de moustiques."
+        },
+        {
+            "id":14,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Donc finalement, elle peut mener une vie plutôt normale."
+        },
+        {
+            "id":15,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Oui, elle doit juste prendre médicaments antirétroviraux qui permettent de réduire la concentration du virus dans son organisme..."
+        },
+        {
+            "id":16,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"... Ce qui a pour but d’améliorer sa santé et empêcher sa transmission de quelques manières que ce soit."
+        },
+        {
+            "id":17,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"* Je vais l’écrire dans mon journal cette information *"
+        },
+        {
+            "id":18,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"En tous cas je te conseil de faire attention avec tes prochains partenaires"
+        },
+        {
+            "id":19,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Oui, merci j’y penserai. Salut. A plus tard"
+        }
+    ]
+}
+
+
+

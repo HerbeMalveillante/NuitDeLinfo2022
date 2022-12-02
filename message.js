@@ -34,7 +34,7 @@ window.onload = function() {
     const urlParams = new URLSearchParams(queryString);
     const idCompte = urlParams.get('idCompte')
 
-    // ------------------------------------------ Collecte Info Discussion
+    // ------------------------------------------ Collecte Info Discussion ------------------------------------------
     function usingDataMessage(xhttp) {
         const myObj = JSON.parse(xhttp.responseText);
 
