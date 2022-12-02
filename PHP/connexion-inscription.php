@@ -53,12 +53,12 @@ function connexion($user, $mdp){
     if ($mdp == mysqli_fetch_array($rep)['mdp']){
         //connecter l'utilisateur
         $_SESSION["username"] = $user;
-        $jsonReturn  = array("type" => "connexion", "response" => "connecté");
+        $jsonReturn  = array("type" => "connexion", "response" => "connecte");
         echo json_encode($jsonReturn);
     }
     else{
         //retourner message erreur de connexion
-        $jsonError  = array("type" => "connexion", "response" => "informations erronées");
+        $jsonError  = array("type" => "connexion", "response" => "informations erronees");
         echo json_encode($jsonError);
     };
 };
@@ -69,7 +69,7 @@ function creation_compte($user, $mdp){
     $rep = sgbd_execute_requete($req);
     //connecter l'utilisateur sur sa page
     $_SESSION["username"] = $user;
-    $jsonReturn  = array("type" => "connexion", "response" => "création OK");
+    $jsonReturn  = array("type" => "connexion", "response" => "creation OK");
     echo json_encode($jsonReturn);
     };
 
