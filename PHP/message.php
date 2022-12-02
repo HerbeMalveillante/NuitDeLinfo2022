@@ -27,10 +27,10 @@ if ($data['action']=="SESSION" ) {
 // Envoi JSON : {action:INFODISCUSSION, idDiscussion:int()} 
 if ($data['action']=="INFODISCUSSION" ) {
     
-    $sql="SELECT `titre`, `dateCréation`, `username` FROM `discussion` 
+    $sql="SELECT `titre`, `dateCréation`, `username`, description FROM `discussion` 
             WHERE idDiscussion=".$data['idDiscussion'];
     $result = sgbd_execute_requete($sql);
-    $jsonData = $result->fetch_all(MYSQLI_ASSOC);
+    $jsonData = $result->fetch_all(MYSQLI_ASSOC)[0];
     
     echo json_encode($jsonData);
 
@@ -56,8 +56,6 @@ if ($data['action']=="LOADMESSAGE" ) {
 // ------------------------------------------ Ajout Message ------------------------------------------
 // Envoi JSON : {action:ADDMESSAGE, idDiscussion:int(), content:str()}
 if ($data['action']=="ADDMESSAGE" ) {
-    $_SESSION['username']="Johnson";
-    
     $sql="INSERT INTO `message`( `dateMessage`, `content`, `idDiscussion`, `username`) VALUES 
             (NOW(), ?,".$data['idDiscussion'].",'".$_SESSION['username']."')";
     $id = sgbd_execute_prepared_requete($sql, [$data['content']], false);
