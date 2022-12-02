@@ -13,63 +13,8 @@
 		></script>
 		<title>Post</title>
 
-		<script>
-			var nbPages = 1;
-
-			function sendAjaxJSON(url, cFunction, donnees) {
-				// url : url du fichier php
-				// cFunction : nom de la fct qui utilise les données renvoyées
-				// donnees : json des données à envoyer
-				const xhttp = new XMLHttpRequest();
-				xhttp.onload = function () {
-					cFunction(this);
-				};
-				xhttp.open("POST", url);
-				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
-			}
-
-			// ------------------------------------------ Check Session ------------------------------------------
-			function usingCheckSession(xhttp) {
-				console.log(xhttp.responseText);
-				const dataRetrieved = JSON.parse(xhttp.responseText);
-				console.log(dataRetrieved);
-			}
-
-			var jsonCheckSession = {
-				action: "post",
-				titre: "",
-				description: "",
-				categories: [],
-			};
-
-			//window.onload = function () {
-			//	sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
-			//};
-
-			function submit() {
-				var titre = document.getElementById("titre").value;
-				var description = document.getElementById("description").value;
-				var categories = [];
-				if (document.getElementById("question").checked) {
-					categories.push("question");
-				}
-				if (document.getElementById("temoignage").checked) {
-					categories.push("temoignage");
-				}
-				if (document.getElementById("information").checked) {
-					categories.push("information");
-				}
-				if (document.getElementById("humour").checked) {
-					categories.push("humour");
-				}
-
-				jsonCheckSession.titre = titre;
-				jsonCheckSession.description = description;
-				jsonCheckSession.categories = categories;
-
-				sendAjaxJSON("PHP/creation_discussion.php", usingCheckSession, jsonCheckSession);
-			}
+		<script src="message.js"></script>
+			
 		</script>
 	</head>
 	<body class="p-0 m-0 h-screen">
@@ -104,8 +49,8 @@
 					</div>
 				</div>
 				<div class="pl-4">
-					<p class="text-pink-600 text-xl font-bold">Lorem, ipsum dolor si amet</p>
-					<p class="text-gray-800">
+					<p id="titreDiscussion" class="text-pink-600 text-xl font-bold">Lorem, ipsum dolor si amet</p>
+					<p id="descDiscussion" class="text-gray-800">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem repudiandae
 						laboriosam iste expedita debitis quae velit, molestias earum perferendis quasi, voluptate quo
 						magnam fugit ratione, quos aut iure natus.
@@ -132,21 +77,8 @@
 			</div>
 			<!--end of comments-->
 			<!--comments-->
-			<div class="ml-5 mb-2">
-				<div class="flex gap-2">
-					<svg class="w-10" data-jdenticon-value="sylvain"></svg>
-					<div class="flex flex-col">
-						<span class="text-pink-800 text-xl font-semibold">sylvain</span>
-						<span class="text-gray-400 text-sm">2022-12-02 03:31:16</span>
-					</div>
-				</div>
-				<div class="pl-2">
-					<p class="text-gray-800">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio fugit alias, neque sapiente
-						nobis doloribus.
-					</p>
-				</div>
-			</div>
+			<div id="comments"></div>
+			
 			<!--end of comments-->
 			<!--comments-->
 			<div class="ml-5 mb-2">
@@ -165,23 +97,7 @@
 				</div>
 			</div>
 			<!--end of comments-->
-			<!--comments-->
-			<div class="ml-5 mb-2">
-				<div class="flex gap-2">
-					<svg class="w-10" data-jdenticon-value="kilyan"></svg>
-					<div class="flex flex-col">
-						<span class="text-pink-800 text-xl font-semibold">kilyan</span>
-						<span class="text-gray-400 text-sm">2022-12-02 03:31:16</span>
-					</div>
-				</div>
-				<div class="pl-2">
-					<p class="text-gray-800">
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio fugit alias, neque sapiente
-						nobis doloribus.
-					</p>
-				</div>
-			</div>
-			<!--end of comments-->
+			
 		</div>
 
 		<div class="flex flex-col gap-2 items-center justify-center mt-3">

@@ -55,7 +55,7 @@ function connexion($user, $mdp){
         echo json_encode($jsonError);
     }
     else{
-        //vérification du mot de passe
+        // vérification du mot de passe
         $req = 'SELECT mdp FROM compte WHERE username="'.$user.'";';
         $rep = sgbd_execute_requete($req);
         if (password_verify($mdp, mysqli_fetch_array($rep)['mdp'])){
