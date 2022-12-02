@@ -40,3 +40,8 @@ CREATE TABLE Discussion_possede_Categorie(
    FOREIGN KEY(idDiscussion) REFERENCES Discussion(idDiscussion),
    FOREIGN KEY(idCategorie) REFERENCES Categorie(idCategorie)
 );
+
+INSERT INTO `categorie`(`idCategorie`, `nom`, `couleur`) VALUES ('1','question','rouge');
+INSERT INTO `categorie`(`idCategorie`, `nom`, `couleur`) VALUES ('2','temoignage','bleu');
+INSERT INTO `categorie`(`idCategorie`, `nom`, `couleur`) VALUES ('3','information','vert');
+INSERT INTO `categorie`(`idCategorie`, `nom`, `couleur`) VALUES ('4','humour','gris');
