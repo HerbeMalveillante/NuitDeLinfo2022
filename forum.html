@@ -102,6 +102,7 @@
 
 			function search() {
 				jsonCheckSession.recherche = document.getElementById("recherche").value;
+				jsonCheckSession.page = 1;
 				sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
 			}
 		</script>
@@ -134,7 +135,8 @@
 			>
 				<input id="recherche" type="text" placeholder="Rechercher" class="p-2 w-full bg-transparent" />
 				<svg
-					onclick="recherche()"
+					id="search"
+					onclick="search()"
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 24 24"
@@ -240,5 +242,15 @@
 				<a class="text-pink-400 underline" href="https://www.nuitdelinfo.com/">Nuit de l'info 2022</a>
 			</div>
 		</footer>
+
+		<script>
+			var recherche = document.getElementById("recherche");
+			recherche.onkeyup = function (event) {
+				if (event.keyCode === 13) {
+					event.preventDefault();
+					search();
+				}
+			};
+		</script>
 	</body>
 </html>
