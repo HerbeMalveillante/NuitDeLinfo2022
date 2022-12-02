@@ -1,5 +1,5 @@
 <?php
-include_once("PHP/bdd_connection.php");
+include_once("bdd_connection.php");
 
 //vérification de l'existence du json envoyant les données
 if (!isset($_POST["json"])){ //  || !isset($_SESSION["username"])
