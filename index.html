@@ -30,7 +30,7 @@
 				console.log(myObj);
 			}
 
-			const jsonCheckSession = {action:"INFODISCUSSION", idDiscussion:1};
+			const jsonCheckSession = {action:"ADDMESSAGE", idDiscussion:1, content:"Chaussure"};
 
 			window.onload = function () {
 				sendAjaxJSON("PHP/message.php", "", jsonCheckSession);
