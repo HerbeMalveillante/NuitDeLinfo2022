@@ -16,6 +16,9 @@ if (!isset($data['titre'])){
 if (!isset($data['categories'])){
     exit("an error has occured");
 };
+if (!isset($data['contenu'])){
+    exit("an error has occured");
+};
 if (!isset($data['action'])){
     exit("an error has occured");
 };
@@ -23,21 +26,23 @@ if (!isset($data['action'])){
 $user = "Patrick"  //$user = $_SESSION["username"];
 $titre = trim($data['titre']);
 $categories = trim($data['categories']); //une liste
-$action = rim($data['action']);
+$description = trim($data['description']);
+$action = trim($data['action']);
 
 
 if ($action == "post"){
     creation_discussion($user, $titre, $categories);
 }
-elseif ($action == "catégories"){
+elseif ($action == "categories"){
     envoyer_catégories();
 };
 
 function creation_discussion($user, $titre, $categories){
 
+    //Stockage de la date et de l'heure actuelle
     $date = new Datetime();
     $date_actuelle = $date->format("Y-m-d h:i:s");
-    $req = "INSERT INTO discussion(titre,dateCréation,username) VALUES('$titre',NOW(),'$user')";
+    $req = "INSERT INTO discussion(titre,dateCréation,username,description) VALUES('$titre',NOW(),'$user','$description')";
     $id = execute_requete_return_last_id($req); //permet d'executer la requete et de retourner l'id créé par l'auto-increment
 
     foreach ($categories as $categ){
