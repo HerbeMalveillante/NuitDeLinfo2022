@@ -11,6 +11,7 @@ $data = json_decode($_POST["json"], true);
 
 $action = $data['action'];
 
+session_start();
 
 if ($data['action']=="SESSION" ) {
 
@@ -27,7 +28,7 @@ if ($data['action']=="SESSION" ) {
 
 		exit();
 	}
-}
+};
 
 if ($action == "connexion"){
     $user = trim($data['pseudo']);
@@ -42,57 +43,34 @@ if ($action == "connexion"){
     else{ //sinon on connecte l'utilisateur sur son compte
         connexion($user, $mdp);
     }
-}
+};
 
 
 function connexion($user, $mdp){
-    //vérification de l'existence de l'utilisateur
-    $req = 'SELECT COUNT(username) as nb FROM compte WHERE username="'.$user.'";';
+    //vérification du mot de passe
+    $req = 'SELECT mdp FROM compte WHERE username="'.$user.'";';
     $rep = sgbd_execute_requete($req);
-    if (mysqli_fetch_array($rep)['nb'] != 1) {//Si il n'y a aucun utilisateur avec ce nom dans la base, on renvoie un message d'erreur
-        //retourner erreur connexion
-        $jsonError  = array("type" => "error", "response" => "Le pseudonyme et le mot de passe ne correspondent pas à un compte existant");
-        echo json_encode($jsonError);
+    if ($mdp == mysqli_fetch_array($rep)['mdp']){
+        //connecter l'utilisateur
+        $_SESSION["username"] = $user;
+        $jsonReturn  = array("type" => "connexion", "response" => "connecte");
+        echo json_encode($jsonReturn);
     }
     else{
-        // vérification du mot de passe
-        $req = 'SELECT mdp FROM compte WHERE username="'.$user.'";';
-        $rep = sgbd_execute_requete($req);
-        if (password_verify($mdp, mysqli_fetch_array($rep)['mdp'])){
-            //retourner message erreur de connexion
-            $jsonError  = array("type" => "error", "response" => "Le pseudonyme et le mot de passe ne correspondent pas à un compte existant");
-            echo json_encode($jsonError);
-        }
-        else{
-            //connecter l'utilisateur
-            session_start();
-            $_SESSION["username"] = $user;
-            $jsonReturn  = array("type" => "Session", "response" => "OK");
-            echo json_encode($jsonReturn);
-        };
-    }
-
-};
-
-function creation_compte($user, $mdp){
-    //vérification de la non existence de l'utilisateur
-    $req = "SELECT COUNT(username) as nb FROM compte WHERE username='".$user."';" ;
-    $rep = sgbd_execute_requete($req);
-    if (mysqli_fetch_array($rep)['nb'] != 0) {
-        //retourner erreur création compte
-        $jsonError  = array("type" => "error", "response" => "Le pseudonyme n'est pas disponible");
+        //retourner message erreur de connexion
+        $jsonError  = array("type" => "connexion", "response" => "informations erronees");
         echo json_encode($jsonError);
-    }
-    else {
-        $mdp = password_hash($mdp, PASSWORD_BCRYPT); //encryptage du mot de passe dans la base de données
-        $req = "INSERT INTO compte(username,mdp) VALUES ('$user','$mdp');";
-        $rep = sgbd_execute_requete($req);
-        //connecter l'utilisateur sur sa page
-        session_start();
-        $_SESSION["username"] = $user;
-        $jsonReturn  = array("type" => "pseudo", "response" => "OK");
-        echo json_encode($jsonReturn);
     };
 };
+
+
+function creation_compte($user, $mdp){
+    $req = "INSERT INTO compte(username,mdp) VALUES ('$user','$mdp');";
+    $rep = sgbd_execute_requete($req);
+    //connecter l'utilisateur sur sa page
+    $_SESSION["username"] = $user;
+    $jsonReturn  = array("type" => "connexion", "response" => "creation OK");
+    echo json_encode($jsonReturn);
+    };
 
 ?>
