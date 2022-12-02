@@ -69,6 +69,7 @@ function sgbd_execute_prepared_requete($reqToPrepare, $param, $isProducingResult
 
 function execute_requete_return_last_id($req) {
 	// connexion
+    global $dbhost, $dblogin, $dbpass, $dbname;
 	$db = new mysqli($dbhost, $dblogin, $dbpass, $dbname, 3306);
 
 	if ($db->connect_errno) {

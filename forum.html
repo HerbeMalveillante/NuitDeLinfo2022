@@ -8,6 +8,8 @@
 		<title>FORUM</title>
 
 		<script>
+			var nbPages = 1;
+
 			function sendAjaxJSON(url, cFunction, donnees) {
 				// url : url du fichier php
 				// cFunction : nom de la fct qui utilise les données renvoyées
@@ -23,7 +25,14 @@
 
 			// ------------------------------------------ Check Session ------------------------------------------
 			function usingCheckSession(xhttp) {
-				const myObj = JSON.parse(xhttp.responseText);
+				const dataRetrieved = JSON.parse(xhttp.responseText);
+				const myObj = dataRetrieved["data"];
+				const nbDiscussion = dataRetrieved["nbDiscussion"];
+
+				// each page has a maximum of 10 discussions.
+				nbPages = Math.ceil(nbDiscussion / 10);
+
+				console.log(nbDiscussion);
 
 				console.log(myObj);
 				// empty the div before adding new elements
@@ -88,6 +97,9 @@
 
 			function suiv() {
 				jsonCheckSession.page = jsonCheckSession.page + 1;
+				if (jsonCheckSession.page > nbPages) {
+					jsonCheckSession.page = nbPages;
+				}
 				console.log(jsonCheckSession.page);
 				sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
 			}
