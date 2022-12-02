@@ -11,6 +11,7 @@ $data = json_decode($_POST["json"], true);
 
 $action = $data['action'];
 
+
 if ($data['action']=="SESSION" ) {
 
 	// Il n'y a pas de session
