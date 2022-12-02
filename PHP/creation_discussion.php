@@ -10,35 +10,22 @@ $data = json_decode($_POST["json"], true);
 
 #$_POST['categories'] = ["cat1", "cat2", "cat3"];
 
-if (!isset($data['titre'])){
-    exit("an error has occured");
-};
-if (!isset($data['categories'])){
-    exit("an error has occured");
-};
-if (!isset($data['contenu'])){
-    exit("an error has occured");
-};
-if (!isset($data['action'])){
-    exit("an error has occured");
-};
 
-$user = "Patrick"  //$user = $_SESSION["username"];
+$user = "Patrick";  //$user = $_SESSION["username"];
 $titre = trim($data['titre']);
-$categories = trim($data['categories']); //une liste
+$categories = $data['categories']; //une liste
 $description = trim($data['description']);
-$action = trim($data['action']);
+$action = $data['action'];
 
-$jsonReturn  = array("type" => "creation discussion", "response" => "Discussion créée avec succès");
-echo json_encode($jsonReturn);
+
 if ($action == "post"){
-    creation_discussion($user, $titre, $categories);
+    creation_discussion($user, $titre, $categories, $description);
 }
 elseif ($action == "categories"){
     envoyer_catégories();
 };
 
-function creation_discussion($user, $titre, $categories){
+function creation_discussion($user, $titre, $categories, $description){
 
     //Stockage de la date et de l'heure actuelle
     $date = new Datetime();
