@@ -1,0 +1,251 @@
+{
+	"num":28,
+    "slide":[
+        {
+            "id":1,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Sinon tu fais quoi dans la vie ? ",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":2,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Je travaille dans une entreprise de sensibilisation aux IST ",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":3,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Vraiment ? C’est cool ça ! Mais c’est quoi une IST ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":4,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Une IST ou infection sexuelle transmissible (anciennement appelée MST) sont des maladies qui peuvent se transmettre avec des rapports sexuels.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":5,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Il y a, par exemple, le VIH, les personnes atteintes, développent, sans un traitement adapté, le SIDA, qui crée une immunodéficience et donc un affaiblissement du corps.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":6,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Celui-ci est incurable, mais peut être ralenti et diminué.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":7,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Oui, le VIH j’en ai entendu parlé par mon coloc. ",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":8,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Il y a aussi l’hépatite B qui provoque fatigue et fièvre, et qui est dure à reconnaitre car ses symptômes sont généralement peu spécifiques et dans 10% des cas, elle est chronique donc incurable.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":9,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"C’est assez grave quand même.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":10,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Oui et ce n’est pas tout. Il y en a d’autres !",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":11,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Tant que ça ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":12,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Pas mal quand même. Il y en a huit principales : Le VIH, les hépatites B et C, l’herpès, la blennorragie gonococcique, la chlamydiose, la syphilis, et le papillomavirus.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":13,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Ça en fait beaucoup quand même.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":14,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Je n’ai pas l’habitude de demander ça mais il est tard, tu veux dormir chez moi ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":15,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"",
+            "choice":["Oui, mais je ne voudrais pas déranger","Non, ne t’en fais pas, je ne voudrais pas abuser de ton hospitalité."],
+            "answer":["Ne t’en fais pas tu ne me dérange pas du tout. Par contre, je te préviens, je n’ai qu’un lit, et pas de matelas supplémentaires, ni de canapé. On va devoir se serrer.","Ne t’en fais pas tu ne me dérange pas du tout. Par contre, je te préviens, je n’ai qu’un lit, et pas de matelas supplémentaires, ni de canapé. On va devoir se serrer."]
+        },
+        {
+            "id":16,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"*Ha, je vois…*",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":17,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"",
+            "choice":["Et donc, vu qu’on était sur le sujet, tu t’es fait dépister contre des IST ?","Je vois, si tu veux en cas de ‘problèmes’ j’ai des ‘protections’"],
+            "answer":["Je vois qu’on pense de la même manière tous les deux. Effectivement, je suis dépisté. C’est assez facile, d’ailleurs. Il suffit d’aller voir son médecin et de lui demander une prescription pour une prise de sang.", "Je vois qu’on pense à la même chose."]
+        },
+        {
+            "id":18,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Tu as de quoi te protéger au cas où quelque chose se passe ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":19,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"",
+            "choice":["Oui.", "Non."],
+            "answer":["Très bien, les protections rapides ( telles que les préservatifs masculins ou féminins) sont de bonnes protections contre les IST.", "Ne t’en fais pas j’en ai. Sache que les protections rapides (telles que les préservatifs masculins ou féminins) sont de bonnes protections contre les IST."]
+        },
+        {
+            "id":20,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Je vois qu’on pense à la même chose. C’est super si tu as des protections, sache que celles-ci réduisent fortement les risques de contracter des IST.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":21,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Salut, c’était super cette nuit.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":22,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Oui, super.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":23,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"J’ai appris beaucoup de choses hier soir, merci.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":24,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Désolé, je vais devoir te quitter, je vais rentrer chez moi. On se recontacte.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":25,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Merci, j’ai appris pas mal de choses cette nuit aussi.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":26,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Oui, on se rappelle. Bonne journée, rentre bien.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":27,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Merci, bonne journée à toi aussi.",
+            "choice":[],
+            "answer":[]
+        }
+    ]
+}
+
+
+

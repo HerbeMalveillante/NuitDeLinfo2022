@@ -8,7 +8,6 @@ class Rectangle{
     }
 
     in(x,y){
-        console.log(this.x <= x,x <= this.x+this.w,this.y <= y,y <= this.y+this.h);
         return (this.x <= x && x <= this.x+this.w) && (this.y <= y && y <= this.y+this.h);
     }
 }

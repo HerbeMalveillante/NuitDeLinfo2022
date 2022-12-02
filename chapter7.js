@@ -39,7 +39,7 @@ const wrapText = function(ctx, text, x, y, maxWidth, lineHeight) { // FROM JFOLT
 
 
 
-class Chapter1{
+class Chapter7{
     constructor(){
         this.bg = new Image();
         this.bg.src = "IMG/appart.bmp";
@@ -52,29 +52,18 @@ class Chapter1{
 
         var _this = this
         this.data = null;
-        this.SlideNb = 0;
+        this.SlideNb = 4;
 
-        this.ready = false;
+        this.ready = true;
         this.finished = false;
-
-        $.getJSON('chap1.json', function(values) {
-            
-            _this.SlideNb = values.num;
-            _this.data = values.slide;
-
-        }).done(function(data){
-
-            _this.ready = true;
-
-        });
 
         this.slide = 0;
     }
     
     update(e) {
-        this.slide = Math.min(this.slide+1, this.SlideNb-1);
-        if (this.slide == this.SlideNb-1) {
-            this.finished = true;
+        if(!this.choosing){
+            this.pause = false;
+            this.slide = Math.min(this.slide+1, this.SlideNb-1);
         }
     }
     
@@ -84,66 +73,68 @@ class Chapter1{
             ctx.fillStyle = "rgb(0, 0, 0)"; 
             ctx.fillRect(0, 0, 600, 600);
         } else {
-
-            var s = this.data[this.slide];
-            var values = [s.id, s.idChar, s.action, s.legend, s.content];
-    
-            if (values[1] == -1){
+        
+            if (this.slide == 0){
                 ctx.fillStyle = "rgb(0, 0, 0)"; 
                 ctx.fillRect(0, 0, 600, 600);
-    
-            } else if (true) {
-    
-                ctx.drawImage(this.bg, 0, 0)
-                
-                this.characters[values[1]%2].draw(ctx)
-        
-                var r_a = 0.2; 
-                ctx.fillStyle = "rgba(0, 0, 0, " + r_a + ")"; 
+            } else if (this.slide == 1){
+                ctx.fillStyle = "rgb(0, 0, 0)"; 
                 ctx.fillRect(0, 0, 600, 600);
-                
-                this.characters[values[1] -1].action = values[2];
-                this.characters[values[1] -1].draw(ctx)
         
-        
-                var r_a = 0.8; 
-                ctx.fillStyle = "rgba(0, 0, 0, " + r_a + ")"; 
-                ctx.fillRect(0, 400, 600, 200);
+                ctx.fillStyle = "rgb(255, 106, 0)"; 
+                ctx.font = "35px Arial";
+                ctx.textAlign = "center";
 
+                let txt = "Merci d’avoir participé, nous espérons que ce jeu de simulation vous aura été utile et vous aura permis d’en apprendre un peu plus sur les IST.";
 
-                var r_a = 0.8; 
-                ctx.fillStyle = "rgba(0, 0, 0, " + r_a + ")"; 
-                ctx.fillRect(0, 350, 200, 50);
-    
-            }
-
-            ctx.fillStyle = "rgb(255, 106, 0)"; 
-            ctx.font = "30px Arial";
-            ctx.textAlign = "center";
-            if (values[3] == "" && values[1] != -1){
-                ctx.fillText(this.characters[values[1] -1].pseudo,100,390);
-            } else {
-                ctx.fillText(values[3],100,390);
-            }
-
-            ctx.fillStyle = "rgb(255, 157, 20)"; 
-            ctx.font = "25px Arial";
-            ctx.textAlign = "center";
-            if (true){
-                
-                let wrappedText = wrapText(ctx, values[4], 300, 450, 500, 30);
-                
+                let wrappedText = wrapText(ctx, txt, 300, 200, 500, 40);
+                                
                 wrappedText.forEach(function(item) {
                     // item[0] is the text
                     // item[1] is the x coordinate to fill the text at
                     // item[2] is the y coordinate to fill the text at
                     ctx.fillText(item[0], item[1], item[2]); 
-                })
+                });
+            } else if (this.slide == 2){
+                ctx.fillStyle = "rgb(0, 0, 0)"; 
+                ctx.fillRect(0, 0, 600, 600);
+        
+                ctx.fillStyle = "rgb(255, 106, 0)"; 
+                ctx.font = "35px Arial";
+                ctx.textAlign = "center";
 
+                let txt = "N’hésitez pas à visitez notre forum où vous pourrez échanger avec d’autres personnes sur le sujet.";
+
+                let wrappedText = wrapText(ctx, txt, 300, 250, 500, 40);
+                                
+                wrappedText.forEach(function(item) {
+                    // item[0] is the text
+                    // item[1] is the x coordinate to fill the text at
+                    // item[2] is the y coordinate to fill the text at
+                    ctx.fillText(item[0], item[1], item[2]); 
+                });
+            } else if (this.slide == 3){
+                ctx.fillStyle = "rgb(0, 0, 0)"; 
+                ctx.fillRect(0, 0, 600, 600);
+        
+                ctx.fillStyle = "rgb(255, 106, 0)"; 
+                ctx.font = "35px Arial";
+                ctx.textAlign = "center";
+
+                let txt = "Et n’oubliez pas : pas de préjugés, tout le monde peut attraper une IST !";
+
+                let wrappedText = wrapText(ctx, txt, 300, 270, 500, 40);
+                                
+                wrappedText.forEach(function(item) {
+                    // item[0] is the text
+                    // item[1] is the x coordinate to fill the text at
+                    // item[2] is the y coordinate to fill the text at
+                    ctx.fillText(item[0], item[1], item[2]); 
+                });
             }
-
         }
+
     }
 }
 
-export default Chapter1;
+export default Chapter7;

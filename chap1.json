@@ -6,7 +6,7 @@
             "idChar":-1,
             "action":-1,
             "legend":"",
-            "content":"Cher journal, je m’appelle, comme tu le sais, Rouge et j’emménage aujourd’hui dans ma nouvelle colocation.  Ça va être SUPER !!!."
+            "content":"Cher journal, je m’appelle, comme tu le sais, Rouge et j’emménage aujourd’hui dans une nouvelle colocation.  Ça va être SUPER !!!"
         },
         {
             "id":2,
@@ -34,7 +34,7 @@
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":" Moi, c’est Rouge, du coup, elle ressemble à ça la coloc ?"
+            "content":" Moi, c’est Rouge, alors, elle ressemble à ça la coloc ?"
         },
         {
             "id":6,
@@ -55,14 +55,14 @@
             "idChar":2,
             "action":1,
             "legend":"",
-            "content":"Je viens d’apprendre que ma sœur a contracté le VIH"
+            "content":"Je viens d’apprendre que ma sœur a contracté le VIH."
         },
         {
             "id":9,
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"Ah dur et comment elle va ?"
+            "content":" Ah mince ! et comment va-t-elle ? "
         },
         {
             "id":10,
@@ -76,21 +76,21 @@
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"Mais comment elle fait pour ne pas le transmettre par inadvertance aux autres alors ? C’est super contagieux non ?"
+            "content":"Mais c’est super contagieux non ? comment va-t-elle faire pour ne pas le transmettre par inadvertance aux autres ? "
         },
         {
             "id":12,
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"Non dans les faits ce n’est pas si contagieux. Cela ne se transmet pas par les contacts physiques (baisers , étreintes, poignées de mains), ..."
+            "content":"Non, dans les faits ce n’est pas si contagieux. Ça ne se transmet pas par des contacts physiques (comme les baisers, étreintes, ou poignées de mains), ..."
         },
         {
             "id":13,
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"... Ni par les miasmes déposés par le corps ( cuvettes des toilettes ), ni par le partage de nourriture, ou encore les piqures de moustiques."
+            "content":"... Ni par les miasmes déposés par le corps (comme la cuvette des toilettes), ni par le partage de nourriture, ou encore les piqures de moustiques, comme beaucoup de personnes le pensent."
         },
         {
             "id":14,
@@ -104,35 +104,35 @@
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"Oui, elle doit juste prendre médicaments antirétroviraux qui permettent de réduire la concentration du virus dans son organisme..."
+            "content":"Oui, elle doit juste prendre des médicaments antirétroviraux qui permettent de réduire la concentration du virus dans son organisme, ..."
         },
         {
             "id":16,
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"... Ce qui a pour but d’améliorer sa santé et empêcher sa transmission de quelques manières que ce soit."
+            "content":"... Ce qui améliore sa santé et empêcher la transmission. "
         },
         {
             "id":17,
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"* Je vais l’écrire dans mon journal cette information *"
+            "content":"* Je vais écrire cette information dans mon journal. *"
         },
         {
             "id":18,
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"En tous cas je te conseil de faire attention avec tes prochains partenaires"
+            "content":"En tous cas je te conseille quand même de faire attention avec tes prochains partenaires. "
         },
         {
             "id":19,
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"Oui, merci j’y penserai. Salut. A plus tard"
+            "content":"Oui, merci j’y penserai. Salut. A plus tard, je vais me balader et j’espère faire de belles rencontres. "
         }
     ]
 }

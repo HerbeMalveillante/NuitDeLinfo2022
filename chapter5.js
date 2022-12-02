@@ -46,7 +46,6 @@ class Rectangle{
     }
 
     in(x,y){
-        console.log(this.x <= x,x <= this.x+this.w,this.y <= y,y <= this.y+this.h);
         return (this.x <= x && x <= this.x+this.w) && (this.y <= y && y <= this.y+this.h);
     }
 }
@@ -55,7 +54,7 @@ function tileCoord(index, tm, ts){ //x, y
     return [index % (tm.width / ts), Math.floor(index / (tm.height / ts))];
 }
 
-class Chapter2{
+class Chapter5{
     constructor(){
         this.mapWidth = 1200;
         this.mapHeight = 1200;
@@ -65,7 +64,8 @@ class Chapter2{
 
         this.finished = false;
 
-        this.player = new Player(8, true, "IMG/violet.png", 80, 80, 460, 1200);
+        this.player = new Player(8, true, "IMG/violet.png", 80, 80, 0, 730);
+        this.player.setOrientation(1);
 
         this.pnj1 = new Player(0, false, "IMG/pnj1.png", 60, 60, 225, 744);
         this.pnj1.setOrientation(2);
@@ -79,10 +79,10 @@ class Chapter2{
         this.dialogue = -1;
 
         this.Map = new Image();
-        this.Map.src = "IMG/map.png";
+        this.Map.src = "IMG/mapRetour.png";
         this.Map.alt = "JavaScriptImage";
 
-        this.endPortal = new Rectangle(0,630,80,230);
+        this.endPortal = new Rectangle(370,1000,310,20);
     }
     
     update(e) {
@@ -166,13 +166,13 @@ class Chapter2{
                     let txt = "";
                     switch(this.dialogue) {
                         case 1:
-                            txt = "Bonjour, savais-tu qu’il n'y a quasiment que l’Herpès 1 qui est transmissible oralement ?";
+                            txt = "Bonjour, savais-tu qu’il n'y a quasiment que l’Herpes qui est transmissible oralement ?";
                             break;
                         case 2:
-                            txt = "Mince, je ne me suis pas protégée avec ma partenaire, je vais aller me faire dépister car je ne sais pas si elle a une Maladie Sexuellement Transmissible. ( MST ) ";
+                            txt = "Mince, je ne me suis pas protégé avec ma partenaire, je vais aller me faire dépister car je ne sais pas si elle a une Maladie Sexuellement Transmissible. ( MST ) ";
                             break;
                         case 3:
-                            txt = "VIH qui devient Sida, hépatites B et C, herpès, blennorragie gonococcique, chlamydioses, syphilis, papillomavirus, tels sont les noms des principales IST.";
+                            txt = "VIH qui devient Sida, hépatites B et C, herpès, blennorragie gonococcique, chlamydioses, syphilis, papillomavirus, tels sont les noms des principales IST";
                             break;
                     }
                     
@@ -194,4 +194,4 @@ class Chapter2{
 
 }
 
-export default Chapter2;
+export default Chapter5;

@@ -39,17 +39,16 @@ const wrapText = function(ctx, text, x, y, maxWidth, lineHeight) { // FROM JFOLT
 
 
 
-class Chapter3{
+class Chapter6{
     constructor(){
         this.bg = new Image();
-        this.bg.src = "IMG/ville.png";
+        this.bg.src = "IMG/appart.bmp";
         this.bg.alt = "JavaScriptImage";
 
-        this.bleu = new VisualChar("IMG/sprites.png","Bleu", 2, 249, 331, 450, 250);
-        this.bleu.action = 1;
+        this.violet = new VisualChar("IMG/sprites.png","Violet", 0, 249, 331, 450, 250);
         this.rouge = new VisualChar("IMG/sprites.png","Rouge", 1, 249, 331, 150, 250);
 
-        this.characters = [this.rouge, this.bleu];
+        this.characters = [this.rouge, this.violet];
 
         var _this = this
         this.data = null;
@@ -61,7 +60,7 @@ class Chapter3{
         this.choosing = false;
         this.choice = -1;
 
-        $.getJSON('chap3.json', function(values) {
+        $.getJSON('chap6.json', function(values) {
             
             _this.SlideNb = values.num;
             _this.data = values.slide;
@@ -77,6 +76,7 @@ class Chapter3{
     
     update(e) {
         if(!this.choosing){
+            this.pause = false;
             this.slide = Math.min(this.slide+1, this.SlideNb-1);
             this.choice = -1;
             if (this.slide == this.SlideNb-1) {
@@ -109,7 +109,7 @@ class Chapter3{
                 ctx.fillStyle = "rgb(255, 106, 0)"; 
                 ctx.font = "50px Arial";
                 ctx.textAlign = "center";
-                ctx.fillText("ATTENTION !!",300,300);
+                ctx.fillText("Après être rentré...",300,300);
             } else {
 
                 var s = this.data[this.slide];
@@ -156,7 +156,7 @@ class Chapter3{
                         ctx.textAlign = "center";
                         if (true){
                             
-                            let wrappedText = wrapText(ctx, values[4], 300, 450, 500, 40);
+                            let wrappedText = wrapText(ctx, values[4], 300, 450, 500, 28);
                             
                             wrappedText.forEach(function(item) {
                                 // item[0] is the text
@@ -186,7 +186,7 @@ class Chapter3{
                                 var table = ["(Q) -> ", "(D) -> "]
                                 for(var i = 0; i < s.choice.length; i++) {
                                 
-                                    let wrappedText = wrapText(ctx, table[i] + s.choice[i], 300, 410+125*i, 500, 20);
+                                    let wrappedText = wrapText(ctx, table[i] + s.choice[i], 300, 400+125*i, 500, 30);
                                     
                                     wrappedText.forEach(function(item) {
                                         // item[0] is the text
@@ -213,7 +213,7 @@ class Chapter3{
                                 ctx.fillRect(0, 0, 600, 600);
                         
                                 ctx.fillStyle = "rgb(255, 106, 0)"; 
-                                ctx.font = "30px Arial";
+                                ctx.font = "25px Arial";
                                 ctx.textAlign = "center";
                                 
                                 let wrappedText = wrapText(ctx, s.answer[this.choice], 300, 400, 500, 40);
@@ -240,4 +240,4 @@ class Chapter3{
     }
 }
 
-export default Chapter3;
+export default Chapter6;

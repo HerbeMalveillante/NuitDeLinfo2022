@@ -1,0 +1,176 @@
+{
+	"num":20,
+    "slide":[
+        {
+            "id":1,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Ça a été hier soir ? Tu t’habitues à la ville ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":2,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Ça va très bien, la ville est sympa et j’ai appris des choses incroyables hier.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":3,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Comme quoi ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":4,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Savais-tu que l’herpès est une IST, qui provoque des boutons aux coins des lèvres pour l'herpès de type 1 mais qui est aussi oralement transmissible, ...",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":5,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"... Et pour l'herpès de type 2 c’est au niveau génital.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":6,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"L’herpès de type 2 ne se guérit pas complètement mais peut être atténuée.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":7,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"La syphilis est une infection bactérienne qui a été très mortelle.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":8,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Incroyable, je ne savais pas...",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":9,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Et bien moi non plus avant. ",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":10,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Il y en a aussi qui peuvent provoquer des risques d’infertilité si non traitées, comme la gonococcie, ...",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":11,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"... Ou d’autres qui sont asymptomatiques (sans symptômes) comme la trichomonase.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":12,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Il y a la Chlamydiae (chlamydiose) qui est l'IST la plus fréquente chez les jeunes mais qui se soigne complètement.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":13,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Et le Papillomavirus qui est très contagieux, et très présent actuellement, majoritairement bénin mais qui provoque quand même 70% des cancers du col de l’utérus.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":14,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Eh bien, on en apprend tous les jours. Dis-moi, il y a quand même un moyen d’éviter de les avoir, ces IST ?",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":15,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Oui, bien sûr, même si certaines sont incurables, la plupart se soignent et d’autres ont des traitements à vie qui permettent d’avoir une vie presque normale.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":16,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Cependant, un des meilleurs moyens de les éviter est de se protéger durant l’acte sexuel.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":17,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Et surtout, il ne faut pas hésiter à consulter un médecin pour demander à se faire dépister en cas de doutes et ne pas se refermer sur soi car la plupart de ces infections se soignent.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":18,
+            "idChar":2,
+            "action":0,
+            "legend":"",
+            "content":"Super, merci pour tout. Je te laisse, je vais en cours, bonne journée.",
+            "choice":[],
+            "answer":[]
+        },
+        {
+            "id":19,
+            "idChar":1,
+            "action":0,
+            "legend":"",
+            "content":"Oui, bonne journée et bonne chance pour ton cours !",
+            "choice":[],
+            "answer":[]
+        }
+    ]
+}

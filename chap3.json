@@ -1,5 +1,5 @@
 {
-	"num":16,
+	"num":13,
     "slide":[
         {
             "id":1,
@@ -7,7 +7,7 @@
             "action":0,
             "legend":"",
             "content":"",
-            "choice":["Oh pardon, ça va ? Pas trop mal ?", "Fais Attention où tu regardes ! "],
+            "choice":[" Oh ! pardon ! ça va ?", "Fais attention où tu regardes !"],
             "answer":["Ça va, merci, il y a eu plus de peur que de mal.",""]
         },
         {
@@ -15,7 +15,7 @@
             "idChar":2,
             "action":1,
             "legend":"",
-            "content":"Ouch, finalement je crois que je me suis foulé une cheville.",
+            "content":"Ouch, finalement, je crois que je me suis foulée la cheville.",
             "choice":[],
             "answer":[]
         },
@@ -25,15 +25,15 @@
             "action":0,
             "legend":"???",
             "content":"",
-            "choice":["Veux-tu de l'aide ?", "*Ne rien faire*"],
-            "answer":["","Peux-tu m’aider s’il te plait, je ne suis pas loin..."]
+            "choice":["Veux-tu de l'aide ?", "*Ne rien faire.*"],
+            "answer":["","Peux-tu m’aider s’il-te-plait, je ne suis pas loin..."]
         },
         {
             "id":4,
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"*Cette personne est un vrai tombeur*",
+            "content":"* Cette personne est belle à en tomber. *",
             "choice":[],
             "answer":[]
         },
@@ -42,7 +42,7 @@
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"Oui bien sur désolé, j’étais perdu dans mes pensées.",
+            "content":"*Cette personne est magnifique.*",
             "choice":[],
             "answer":[]
         },
@@ -51,16 +51,16 @@
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"*Cette personne est magnifique.*",
+            "content":"Appuie-toi sur moi, je vais te conduire devant chez toi.",
             "choice":[],
             "answer":[]
         },
         {
             "id":7,
-            "idChar":2,
+            "idChar":1,
             "action":0,
             "legend":"",
-            "content":"Oui, je veux bien de l’aide s’il vous plait, je ne suis pas loin.",
+            "content":"*Tout-à-fait mon type.*",
             "choice":[],
             "answer":[]
         },
@@ -69,7 +69,7 @@
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"*Ce que cette personne est gentleman et classe aussi.*",
+            "content":"Désolé, effectivement, c’est ma faute...",
             "choice":[],
             "answer":[]
         },
@@ -78,16 +78,16 @@
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"Appuie-toi sur moi, je vais te conduire devant",
+            "content":"Au fait, mon nom est Rouge. Et toi ? ",
             "choice":[],
             "answer":[]
         },
         {
             "id":10,
-            "idChar":1,
+            "idChar":2,
             "action":0,
             "legend":"",
-            "content":"*Tout-à-fait mon type cette personne.*",
+            "content":"Moi, c’est Bleu.",
             "choice":[],
             "answer":[]
         },
@@ -96,7 +96,7 @@
             "idChar":2,
             "action":0,
             "legend":"",
-            "content":"Désolé, effectivement c’est ma faute...",
+            "content":"Mon appartement est juste là, je t’offre un café ?",
             "choice":[],
             "answer":[]
         },
@@ -105,34 +105,7 @@
             "idChar":1,
             "action":0,
             "legend":"",
-            "content":"au fait mon nom est Rouge. Et toi ?",
-            "choice":[],
-            "answer":[]
-        },
-        {
-            "id":13,
-            "idChar":2,
-            "action":0,
-            "legend":"",
-            "content":"Moi c’est Bleu.",
-            "choice":[],
-            "answer":[]
-        },
-        {
-            "id":14,
-            "idChar":2,
-            "action":0,
-            "legend":"",
-            "content":"Mon Apart est juste là, je t’offre un café ?",
-            "choice":[],
-            "answer":[]
-        },
-        {
-            "id":15,
-            "idChar":1,
-            "action":0,
-            "legend":"",
-            "content":"Oui, Pourquoi pas. Merci.",
+            "content":"Oui, pourquoi pas. Merci.",
             "choice":[],
             "answer":[]
         }
