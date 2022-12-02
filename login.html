@@ -34,7 +34,7 @@
 				action: "SESSION",
 			};
 
-			sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
+			sendAjaxJSON("PHP/connexion-inscription.php", usingCheckSession, jsonCheckSession);
 
 			// ------------------------------------------ ENVOYER CONNEXION ------------------------------------------
 			function retrieveData(xhttp) {
@@ -51,10 +51,10 @@
 
 			function submit() {
 				var username = document.getElementById("username").value;
-				var password = document.getElementById("password").value;
+				var mdp = document.getElementById("password").value;
 
 				jsonData.pseudo = username;
-				jsonData.mdp = password;
+				jsonData.mdp = mdp;
 
 				sendAjaxJSON("PHP/connexion-inscription.php", retrieveData, jsonData);
 			}
