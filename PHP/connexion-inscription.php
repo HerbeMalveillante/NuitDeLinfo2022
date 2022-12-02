@@ -15,6 +15,11 @@ if ($action == "connexion"){
     $user =trim($data['pseudo']);
     $mdp = trim($data['mdp']);
     connexion($user, $mdp);
+}
+elseif ($action == "creation compte"){
+    $user = trim($data['pseudo']);
+    $mdp = trim($data['mdp']);
+    creation_compte($user, $mdp);
 };
 
 
@@ -45,6 +50,27 @@ function connexion($user, $mdp){
         };
     }
 
+};
+
+function creation_compte($user, $mdp){
+    //vérification de la non existence de l'utilisateur
+    $req = "SELECT COUNT(username) as nb FROM compte WHERE username='".$user."';" ;
+    $rep = sgbd_execute_requete($req);
+    if (mysqli_fetch_array($rep)['nb'] != 0) {
+        //retourner erreur création compte
+        $jsonError  = array("type" => "error", "response" => "Le pseudonyme n'est pas disponible");
+        echo json_encode($jsonError);
+    }
+    else {
+        $mdp = password_hash($mdp, PASSWORD_BCRYPT); //encryptage du mot de passe dans la base de données
+        $req = "INSERT INTO compte(username,mdp) VALUES ('$user','$mdp');";
+        $rep = sgbd_execute_requete($req);
+        //connecter l'utilisateur sur sa page
+        session_start();
+        $_SESSION["username"] = $user;
+        $jsonReturn  = array("type" => "pseudo", "response" => "OK");
+        echo json_encode($jsonReturn);
+    };
 };
 
 ?>

@@ -11,14 +11,15 @@ $data = json_decode($_POST["json"], true);
 #$_POST['categories'] = ["cat1", "cat2", "cat3"];
 
 
-$user = "Patrick";  //$user = $_SESSION["username"];
-$titre = trim($data['titre']);
-$categories = $data['categories']; //une liste
-$description = trim($data['description']);
+
 $action = $data['action'];
 
 
 if ($action == "post"){
+    $user = "Patrick";  //$user = $_SESSION["username"];
+    $titre = trim($data['titre']);
+    $categories = $data['categories']; //une liste
+    $description = trim($data['description']);
     creation_discussion($user, $titre, $categories, $description);
 }
 elseif ($action == "categories"){

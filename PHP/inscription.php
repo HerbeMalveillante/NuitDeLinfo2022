@@ -8,22 +8,13 @@ if (!isset($_POST["json"])){
 
 $data = json_decode($_POST["json"], true);
 
-if (!isset($data['pseudo'])){
-    exit("an error has occured");
-};
-if (!isset($data['mdp'])){
-    exit("an error has occured");
-};
-if (!isset($data['action'])){
-    exit("an error has occured");
-};
-
-$user = trim($data['pseudo']);
-$mdp = trim($data['mdp']);
+$action = $data['action'];
 
 if ($action == "creation compte"){
+    $user = trim($data['pseudo']);
+    $mdp = trim($data['mdp']);
     creation_compte($user, $mdp);
-}
+};
 
 function creation_compte($user, $mdp){
     //vérification de la non existence de l'utilisateur
