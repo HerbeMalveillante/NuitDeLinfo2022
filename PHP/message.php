@@ -55,7 +55,7 @@ if ($data['action']=="LOADMESSAGE" ) {
 
 // ------------------------------------------ Ajout Message ------------------------------------------
 // Envoi JSON : {action:ADDMESSAGE, idDiscussion:int(), content:str()}
-if ($data['action']=="ADDMESSAGE" ) {
+if ($data['action']=="ADDMESSAGE" && isset($_SESSION["username"])) {
     $sql="INSERT INTO `message`( `dateMessage`, `content`, `idDiscussion`, `username`) VALUES 
             (NOW(), ?,".$data['idDiscussion'].",'".$_SESSION['username']."')";
     $id = sgbd_execute_prepared_requete($sql, [$data['content']], false);
@@ -64,6 +64,11 @@ if ($data['action']=="ADDMESSAGE" ) {
             WHERE idDiscussion=6";
 
     $json = array("response"=>1);
+
+    echo json_encode($json);
+    exit();
+} else {
+    $json = array("response"=>0);
 
     echo json_encode($json);
     exit();
