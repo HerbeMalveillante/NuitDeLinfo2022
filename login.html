@@ -44,6 +44,9 @@
 				if (dataRetrieved.response == "connecte") {
 					alert("Vous êtes connecté");
 					window.location.href = "forum.html";
+				} else if (dataRetrieved.response == "creation OK") {
+					alert("Création de votre compte");
+					window.location.href = "forum.html";
 				} else {
 					document.getElementById("error").innerHTML = "Mot de passe erroné";
 				}

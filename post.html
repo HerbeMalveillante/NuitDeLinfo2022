@@ -14,8 +14,7 @@
 		<title>Post</title>
 
 		<script src="message.js"></script>
-			
-		</script>
+		<script></script>
 	</head>
 	<body class="p-0 m-0 h-screen">
 		<!-- NAVBAR -->
@@ -84,7 +83,7 @@
 			<!--end of comments-->
 			<!--comments-->
 			<div id="comments"></div>
-			
+
 			<!--end of comments-->
 			<!--comments-->
 			<div class="ml-5 mb-2">
@@ -103,17 +102,17 @@
 				</div>
 			</div>
 			<!--end of comments-->
-			
 		</div>
 
 		<div class="flex flex-col gap-2 items-center justify-center mt-3">
 			<input
+				id="content"
 				class="w-5/6 bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-3"
 				type="text"
 				placeholder="Repondez à la conversation"
 			/>
 			<div
-				onclick="post()"
+				id="submit"
 				class="w-5/6 text-white bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
 			>
 				<p>Poster</p>
