@@ -93,9 +93,9 @@
 		<!-- End of the navbar -->
 
 		<!-- Main -->
-		<div class="mt-10 p-2">
+		<div class="mt-10 p-2 border-2 border-red-300 h-2/3 overflow-scroll">
 			<!--main post-->
-			<div>
+			<div class="mb-4">
 				<div class="flex gap-2">
 					<svg class="w-16" data-jdenticon-value="john"></svg>
 					<div class="flex flex-col">
@@ -103,7 +103,98 @@
 						<span class="text-gray-400">2022-12-02 03:07:21</span>
 					</div>
 				</div>
-				<p class="text-red-600">Lorem, ipsum dolor si amet</p>
+				<div class="pl-4">
+					<p class="text-pink-600 text-xl font-bold">Lorem, ipsum dolor si amet</p>
+					<p class="text-gray-800">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt exercitationem repudiandae
+						laboriosam iste expedita debitis quae velit, molestias earum perferendis quasi, voluptate quo
+						magnam fugit ratione, quos aut iure natus.
+					</p>
+				</div>
+			</div>
+			<!--end of main post-->
+
+			<!--comments-->
+			<div class="ml-5 mb-2">
+				<div class="flex gap-2">
+					<svg class="w-10" data-jdenticon-value="susan"></svg>
+					<div class="flex flex-col">
+						<span class="text-pink-800 text-xl font-semibold">susan</span>
+						<span class="text-gray-400 text-sm">2022-12-02 03:31:16</span>
+					</div>
+				</div>
+				<div class="pl-2">
+					<p class="text-gray-800">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio fugit alias, neque sapiente
+						nobis doloribus.
+					</p>
+				</div>
+			</div>
+			<!--end of comments-->
+			<!--comments-->
+			<div class="ml-5 mb-2">
+				<div class="flex gap-2">
+					<svg class="w-10" data-jdenticon-value="sylvain"></svg>
+					<div class="flex flex-col">
+						<span class="text-pink-800 text-xl font-semibold">sylvain</span>
+						<span class="text-gray-400 text-sm">2022-12-02 03:31:16</span>
+					</div>
+				</div>
+				<div class="pl-2">
+					<p class="text-gray-800">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio fugit alias, neque sapiente
+						nobis doloribus.
+					</p>
+				</div>
+			</div>
+			<!--end of comments-->
+			<!--comments-->
+			<div class="ml-5 mb-2">
+				<div class="flex gap-2">
+					<svg class="w-10" data-jdenticon-value="damien"></svg>
+					<div class="flex flex-col">
+						<span class="text-pink-800 text-xl font-semibold">damien</span>
+						<span class="text-gray-400 text-sm">2022-12-02 03:31:16</span>
+					</div>
+				</div>
+				<div class="pl-2">
+					<p class="text-gray-800">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio fugit alias, neque sapiente
+						nobis doloribus.
+					</p>
+				</div>
+			</div>
+			<!--end of comments-->
+			<!--comments-->
+			<div class="ml-5 mb-2">
+				<div class="flex gap-2">
+					<svg class="w-10" data-jdenticon-value="kilyan"></svg>
+					<div class="flex flex-col">
+						<span class="text-pink-800 text-xl font-semibold">kilyan</span>
+						<span class="text-gray-400 text-sm">2022-12-02 03:31:16</span>
+					</div>
+				</div>
+				<div class="pl-2">
+					<p class="text-gray-800">
+						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio fugit alias, neque sapiente
+						nobis doloribus.
+					</p>
+				</div>
+			</div>
+			<!--end of comments-->
+		</div>
+
+		<div class="flex flex-col gap-2 items-center justify-center mt-3">
+			<input
+				class="w-5/6 bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-3"
+				type="text"
+				placeholder="Repondez à la conversation"
+			/>
+			<div
+				onclick="reload()"
+				class="w-5/6 text-white bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Poster</p>
 			</div>
 		</div>
 	</body>
