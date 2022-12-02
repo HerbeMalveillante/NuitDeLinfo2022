@@ -54,3 +54,18 @@ INSERT INTO `discussion`(`idDiscussion`, `titre`, `dateCréation`, `username`) V
 ('[value-1]','[value-2]','[value-3]','[value-4]'),
 ('[value-1]','[value-2]','[value-3]','[value-4]'),
 ('[value-1]','[value-2]','[value-3]','[value-4]'),
+
+// ------------------------------------------ Check Session ------------------------------------------
+		function usingCheckSession(xhttp){
+			const myObj = JSON.parse(xhttp.responseText);
+
+			// Error : pas de session
+			if (myObj["response"]==1) {
+				window.location.href = "PHP/logout.php";
+			}
+		}
+
+		const jsonCheckSession = {
+			action: "SESSION"
+		};
+		sendAjaxJSON("PHP/compteAdmin.php", usingCheckSession, jsonCheckSession);

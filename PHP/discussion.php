@@ -1,5 +1,4 @@
 <?php
-// Envoi JSON :
 include "bdd_connection.php";
 
 session_start();

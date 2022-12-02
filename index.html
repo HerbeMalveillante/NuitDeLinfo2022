@@ -28,14 +28,10 @@
 				console.log(myObj);
 			}
 
-			const jsonCheckSession = {
-				action: "DISCUSSION",
-				recherche: "yes",
-				page: 1,
-			};
+			const jsonCheckSession = {action:"MESSAGE", idDiscussion:1, nbMessage:0};
 
 			window.onload = function () {
-				sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
+				sendAjaxJSON("PHP/message.php", usingCheckSession, jsonCheckSession);
 			};
 		</script>
 	</head>
