@@ -31,7 +31,7 @@ function creation_discussion($user, $titre, $categories, $description){
     //Stockage de la date et de l'heure actuelle
     $date = new Datetime();
     $date_actuelle = $date->format("Y-m-d h:i:s");
-    $req = "INSERT INTO discussion(titre,dateCréation,username,description) VALUES('$titre',NOW(),'$user','$description')";
+    $req = "INSERT INTO discussion(titre,dateCréation,username,dateDernierMessage,description) VALUES('$titre',NOW(),'$user',NOW(),'$description')";
     $id = execute_requete_return_last_id($req); //permet d'executer la requete et de retourner l'id créé par l'auto-increment
 
     foreach ($categories as $categ){
