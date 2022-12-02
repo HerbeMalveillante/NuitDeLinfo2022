@@ -1,11 +1,13 @@
 function sendAjaxJSON(url, cFunction, donnees) {
 	// url : url du fichier php
-	// cFunction : nom de la fct qui utilise les données renvoyées
+	// cFunction : nom de la fct qui utilise les données renvoyées, "" si pas de fct
 	// donnees : json des données à envoyer
 	const xhttp = new XMLHttpRequest();
-	xhttp.onload = function () {
-		cFunction(this);
-	};
+	if (cFunction!="") {
+		xhttp.onload = function () {
+			cFunction(this);
+		};
+	}
 	xhttp.open("POST", url);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
