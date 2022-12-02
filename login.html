@@ -27,6 +27,7 @@
 
 				if (myObj["response"] == 0) {
 					window.location.href = "PHP/logout.php";
+					alert("Vous avez été déconnecté");
 				}
 			}
 
@@ -40,6 +41,12 @@
 			function retrieveData(xhttp) {
 				console.log(xhttp.responseText);
 				const dataRetrieved = JSON.parse(xhttp.responseText);
+				if (dataRetrieved.response == "connecte") {
+					alert("Vous êtes connecté");
+					window.location.href = "forum.html";
+				} else {
+					document.getElementById("error").innerHTML = "Mot de passe erroné";
+				}
 				console.log(dataRetrieved);
 			}
 
@@ -63,9 +70,15 @@
 	<body class="p-0 m-0 h-screen">
 		<!-- NAVBAR -->
 		<nav class="flex p-2 items-center justify-between">
-			<img src="static/logo.svg" class="h-16" alt="" />
+			<img
+				onclick="window.location.href = 'index.html';"
+				class="cursor-pointer h-16"
+				src="static/logo.svg"
+				alt=""
+			/>
 			<svg
-				class="h-16"
+				onclick="window.location.href = 'login.html';"
+				class="h-16 cursor-pointer"
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 24 24"
 				fill="currentColor"
@@ -83,6 +96,7 @@
 		<!-- Login form -->
 		<div class="flex flex-col gap-4 items-center justify-center m-4 mt-28">
 			<h1 class="text-pink-800 font-bold text-4xl">Login</h1>
+			<p class="text-red-500 text-bold text-xl" id="error"></p>
 			<input
 				id="username"
 				class="w-5/6 bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-3"
