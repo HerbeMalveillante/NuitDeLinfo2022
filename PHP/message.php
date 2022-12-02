@@ -23,6 +23,21 @@ if ($data['action']=="SESSION" ) {
 	}
 }
 
+// ------------------------------------------ Renvoi Info Discussion ------------------------------------------
+// Envoi JSON : {action:INFODISCUSSION, idDiscussion:int()} 
+if ($data['action']=="INFODISCUSSION" ) {
+    
+    $sql="SELECT `titre`, `dateCréation`, `username` FROM `discussion` 
+            WHERE idDiscussion=".$data['idDiscussion'];
+    $result = sgbd_execute_requete($sql);
+    $jsonData = $result->fetch_all(MYSQLI_ASSOC);
+    
+    echo json_encode($jsonData);
+
+    exit();
+
+}
+
 // ------------------------------------------ Renvoi Data Message ------------------------------------------
 // Envoi JSON : {action:LOADMESSAGE, idDiscussion:int(), nbMessage:int()} 
 if ($data['action']=="LOADMESSAGE" ) {
