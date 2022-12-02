@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Login</title>
+
+		<script>
+			function sendAjaxJSON(url, cFunction, donnees) {
+				// url : url du fichier php
+				// cFunction : nom de la fct qui utilise les données renvoyées
+				// donnees : json des données à envoyer
+				const xhttp = new XMLHttpRequest();
+				xhttp.onload = function () {
+					cFunction(this);
+				};
+				xhttp.open("POST", url);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
+			}
+
+			// ------------------------------------------ Check Session ------------------------------------------
+			function usingCheckSession(xhttp) {
+				const myObj = JSON.parse(xhttp.responseText);
+
+				if (myObj["response"] == 0) {
+					window.location.href = "PHP/logout.php";
+				}
+			}
+
+			const jsonCheckSession = {
+				action: "SESSION",
+			};
+
+			sendAjaxJSON("PHP/connexion-inscription.php", usingCheckSession, jsonCheckSession);
+
+			// ------------------------------------------ ENVOYER CONNEXION ------------------------------------------
+			function retrieveData(xhttp) {
+				console.log(xhttp.responseText);
+				const dataRetrieved = JSON.parse(xhttp.responseText);
+				console.log(dataRetrieved);
+			}
+
+			var jsonData = {
+				action: "connexion",
+				pseudo: "",
+				mdp: "",
+			};
+
+			function submit() {
+				var username = document.getElementById("username").value;
+				var mdp = document.getElementById("password").value;
+
+				jsonData.pseudo = username;
+				jsonData.mdp = mdp;
+
+				sendAjaxJSON("PHP/connexion-inscription.php", retrieveData, jsonData);
+			}
+		</script>
+	</head>
+	<body class="p-0 m-0 h-screen">
+		<!-- NAVBAR -->
+		<nav class="flex p-2 items-center justify-between">
+			<img src="static/logo.svg" class="h-16" alt="" />
+			<svg
+				class="h-16"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</nav>
+		<!-- End of the navbar -->
+
+		<!-- Login form -->
+		<div class="flex flex-col gap-4 items-center justify-center m-4 mt-28">
+			<h1 class="text-pink-800 font-bold text-4xl">Login</h1>
+			<input
+				id="username"
+				class="w-5/6 bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-3"
+				type="text"
+				placeholder="Nom d'utilisateur"
+			/>
+			<input
+				id="password"
+				class="w-5/6 bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-3"
+				type="password"
+				placeholder="Mot de passe"
+			/>
+			<div
+				onclick="submit()"
+				class="w-5/6 text-white bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Connexion / Inscription</p>
+			</div>
+		</div>
+	</body>
+</html>

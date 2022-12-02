@@ -19,3 +19,12 @@ Animation du site web -> TOOLPAD
 Défi Airbus X Prize -> Plein de petits trucs
 Défi 3, 2, 1 Action -> PUBLICITÉ DU PRODUIT
 Défi CAPTCHA -> faire un captcha original créativité etc, testés par des ingés et des vrais robots
+
+---
+
+Catégories :
+
+-   Question
+-   Témoignage
+-   Informatif
+-   Humour

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<title>Créer un post</title>
+
+		<script>
+			var nbPages = 1;
+
+			function sendAjaxJSON(url, cFunction, donnees) {
+				// url : url du fichier php
+				// cFunction : nom de la fct qui utilise les données renvoyées
+				// donnees : json des données à envoyer
+				const xhttp = new XMLHttpRequest();
+				xhttp.onload = function () {
+					cFunction(this);
+				};
+				xhttp.open("POST", url);
+				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
+			}
+
+			// ------------------------------------------ Check Session ------------------------------------------
+			function usingCheckSession(xhttp) {
+				console.log(xhttp.responseText);
+				const dataRetrieved = JSON.parse(xhttp.responseText);
+				console.log(dataRetrieved);
+			}
+
+			var jsonCheckSession = {
+				action: "post",
+				titre: "",
+				description: "",
+				categories: [],
+			};
+
+			//window.onload = function () {
+			//	sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
+			//};
+
+			function submit() {
+				var titre = document.getElementById("titre").value;
+				var description = document.getElementById("description").value;
+				var categories = [];
+				if (document.getElementById("question").checked) {
+					categories.push("question");
+				}
+				if (document.getElementById("temoignage").checked) {
+					categories.push("temoignage");
+				}
+				if (document.getElementById("information").checked) {
+					categories.push("information");
+				}
+				if (document.getElementById("humour").checked) {
+					categories.push("humour");
+				}
+
+				jsonCheckSession.titre = titre;
+				jsonCheckSession.description = description;
+				jsonCheckSession.categories = categories;
+
+				sendAjaxJSON("PHP/creation_discussion.php", usingCheckSession, jsonCheckSession);
+			}
+		</script>
+	</head>
+	<body class="p-0 m-0 h-screen">
+		<!-- NAVBAR -->
+		<nav class="flex p-2 items-center justify-between">
+			<img src="static/logo.svg" class="h-16" alt="" />
+			<svg
+				class="h-16"
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 24 24"
+				fill="currentColor"
+				class="w-6 h-6"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</nav>
+		<!-- End of the navbar -->
+
+		<div class="flex flex-col p-2 gap-3 mt-10 w-full">
+			<h1 class="text-pink-800 font-bold text-3xl">Créer un post</h1>
+			<input
+				id="titre"
+				class="bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-2"
+				type="text"
+				placeholder="Titre du post"
+			/>
+			<textarea
+				id="description"
+				class="bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-2"
+				rows="10"
+				placeholder="Contenu du post"
+			></textarea>
+			<h2 class="text-pink-800 font-bold text-xl">Catégories</h2>
+			<div class="grid grid-cols-2 gap-3 justify-center items-center">
+				<div class="flex items-center gap-1">
+					<input id="question" type="checkbox" />
+					<span>Question</span>
+				</div>
+				<div class="flex items-center gap-1">
+					<input id="temoignage" type="checkbox" />
+					<span>Témoignage</span>
+				</div>
+				<div class="flex items-center gap-1">
+					<input id="information" type="checkbox" />
+					<span>Information</span>
+				</div>
+				<div class="flex items-center gap-1">
+					<input id="humour" type="checkbox" />
+					<span>Humour</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="flex justify-center gap-2 text-white">
+			<div
+				onclick="window.location.href = 'forum.html';"
+				class="bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Annuler</p>
+			</div>
+			<div
+				onclick="submit()"
+				class="bg-pink-500 p-2 flex items-center justify-center gap-2 rounded-md hover:bg-pink-800 transition-all duration-200 hover:cursor-pointer border-transparent"
+			>
+				<p>Publier</p>
+			</div>
+		</div>
+
+		<script></script>
+	</body>
+</html>

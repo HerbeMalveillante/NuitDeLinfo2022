@@ -1,0 +1,71 @@
+$data = json_decode($_POST["json"], true);
+$userEmail = trim($data['email']);
+$userMdp = trim($data['mdp']);
+
+
+// Pour le renvoi
+$jsonError  = array("type" => "error", "response" => "L'email n'existe pas.");
+
+echo json_encode($jsonError);
+break;
+
+// ------------------------------------------ Check Session ------------------------------------------
+if ($data['action']=="SESSION" ) {
+
+	// Il n'y a pas de session ou pas de session d'un Admin
+	if (!isset($_SESSION['id']) or $_SESSION['type']!="ADMIN") {
+		$jsonError = ["response" => 1];
+
+		echo json_encode($jsonError);
+
+		exit();
+	} else {
+		$jsonError = ["response" => 0];
+		echo json_encode($jsonError);
+
+		exit();
+	}
+}
+
+function execute_requete_return_last_id($req) {
+	// connexion
+	$dblogin='root';
+	$dbpass='';
+	$db = new mysqli("localhost", $dblogin, $dbpass, "Reservation", 3306);
+
+	if ($db->connect_errno) {
+		$msg = "Echec lors de la connection MySQL : (";
+		$msg.= $db->connect_errno;
+		$msg.= ") ";
+		$msg.= $db->connect_error;
+		die ($msg);
+	} else {
+		$db->query($req);
+		$id=mysqli_insert_id($db);
+		$db->close();
+
+		return $id;
+	}
+}
+
+
+
+INSERT INTO `discussion`(`idDiscussion`, `titre`, `dateCréation`, `username`) VALUES 
+('[value-1]','[value-2]','[value-3]','[value-4]'),
+('[value-1]','[value-2]','[value-3]','[value-4]'),
+('[value-1]','[value-2]','[value-3]','[value-4]'),
+
+// ------------------------------------------ Check Session ------------------------------------------
+		function usingCheckSession(xhttp){
+			const myObj = JSON.parse(xhttp.responseText);
+
+			// Error : pas de session
+			if (myObj["response"]==1) {
+				window.location.href = "PHP/logout.php";
+			}
+		}
+
+		const jsonCheckSession = {
+			action: "SESSION"
+		};
+		sendAjaxJSON("PHP/compteAdmin.php", usingCheckSession, jsonCheckSession);

@@ -40,7 +40,12 @@ function sgbd_execute_prepared_requete($reqToPrepare, $param, $isProducingResult
     
     $stmt = $db->stmt_init();
     $stmt->prepare($reqToPrepare);
-    $stmt->bind_param('s', ...$param);
+    // nb de valeur dans $params pour le "s"
+    $strTypes="";
+    for ($i=0; $i < count($param); $i++) { 
+        $strTypes.="s";
+    }
+    $stmt->bind_param($strTypes, ...$param );
     $stmt->execute();
     if ($isProducingResult) {
         $result = $stmt->get_result();
@@ -48,6 +53,26 @@ function sgbd_execute_prepared_requete($reqToPrepare, $param, $isProducingResult
         return $result;
     }
 
-    return $stmt;
+    return $db->insert_id;
+}
+
+function execute_requete_return_last_id($req) {
+	// connexion
+    global $dbhost, $dblogin, $dbpass, $dbname;
+	$db = new mysqli($dbhost, $dblogin, $dbpass, $dbname, 3306);
+
+	if ($db->connect_errno) {
+		$msg = "Echec lors de la connection MySQL : (";
+		$msg.= $db->connect_errno;
+		$msg.= ") ";
+		$msg.= $db->connect_error;
+		die ($msg);
+	} else {
+		$db->query($req);
+		$id=mysqli_insert_id($db);
+		$db->close();
+
+		return $id;
+	}
 }
 ?>
