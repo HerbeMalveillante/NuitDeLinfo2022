@@ -9,6 +9,7 @@ CREATE TABLE Discussion(
    titre VARCHAR(50) NOT NULL,
    dateCréation DATETIME NOT NULL,
    username VARCHAR(50) NOT NULL,
+   dateDernierMessage DATETIME NOT NULL,
    description TEXT,
    PRIMARY KEY(idDiscussion),
    FOREIGN KEY(username) REFERENCES Compte(username)
