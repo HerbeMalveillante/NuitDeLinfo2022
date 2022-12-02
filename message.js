@@ -13,21 +13,6 @@ function sendAjaxJSON(url, cFunction, donnees) {
     xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
 }
 
-// ------------------------------------------ Check Session ------------------------------------------
-function usingCheckSession(xhttp) {
-    const myObj = JSON.parse(xhttp.responseText);
-
-    // Error : pas de session
-	if (myObj["response"] == 1) {
-		window.location.href = "PHP/logout.php";
-	}
-}
-
-const jsonCheckSession = {
-	action: "SESSION",
-};
-sendAjaxJSON("PHP/message.php", usingCheckSession, jsonCheckSession);
-
 window.onload = function() {
     // Stock de l'idDiscussion obtenu par l'url
     const queryString = window.location.search;

@@ -63,6 +63,9 @@ if ($data['action']=="ADDMESSAGE" ) {
     $sql="UPDATE `discussion` SET `dateDernierMessage `=NOW()
             WHERE idDiscussion=6";
 
+    $json = array("response"=>1);
+
+    echo json_encode($json);
     exit();
 }
 
