@@ -3,11 +3,29 @@ include_once("bdd_connection.php");
 
 //vérification de l'existence du json envoyant les données
 
+if (!isset($_POST["json"])){
+    exit("an error has occured");
+};
 
+$data = json_decode($_POST["json"], true);
 
-$user = $_POST['pseudo'];
-$mdp = $_POST['mdp'];
-connexion($user, $mdp);
+if (!isset($data['pseudo'])){
+    exit("an error has occured");
+};
+if (!isset($data['mdp'])){
+    exit("an error has occured");
+};
+if (!isset($data['action'])){
+    exit("an error has occured");
+};
+
+$user =trim($data['pseudo']);
+$mdp = trim($data['mdp']);
+
+if ($action == "connexion"){
+    connexion($user, $mdp);
+;}
+
 
 function connexion($user, $mdp){
     //vérification de l'existence de l'utilisateur
@@ -15,7 +33,6 @@ function connexion($user, $mdp){
     $rep = sgbd_execute_requete($req);
     if (mysqli_fetch_array($rep)['nb'] != 1) {//Si il n'y a aucun utilisateur avec ce nom dans la base, on renvoie un message d'erreur
         //retourner erreur connexion
-        echo "erreur pseudo";
         $jsonError  = array("type" => "error", "response" => "Le pseudonyme et le mot de passe ne correspondent pas à un compte existant");
         echo json_encode($jsonError);
     }
@@ -25,7 +42,6 @@ function connexion($user, $mdp){
         $rep = sgbd_execute_requete($req);
         if (password_verify($mdp, mysqli_fetch_array($rep)['mdp'])){
             //retourner message erreur de connexion
-            echo "erreur mdp";
             $jsonError  = array("type" => "error", "response" => "Le pseudonyme et le mot de passe ne correspondent pas à un compte existant");
             echo json_encode($jsonError);
         }
@@ -33,7 +49,6 @@ function connexion($user, $mdp){
             //connecter l'utilisateur
             session_start();
             $_SESSION["username"] = $user;
-            echo "connecté";
             $jsonReturn  = array("type" => "Session", "response" => "OK");
             echo json_encode($jsonReturn);
         };
