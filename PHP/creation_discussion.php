@@ -29,7 +29,8 @@ $categories = trim($data['categories']); //une liste
 $description = trim($data['description']);
 $action = trim($data['action']);
 
-
+$jsonReturn  = array("type" => "creation discussion", "response" => "Discussion créée avec succès");
+echo json_encode($jsonReturn);
 if ($action == "post"){
     creation_discussion($user, $titre, $categories);
 }
