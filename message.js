@@ -34,8 +34,12 @@ window.onload = function() {
     const urlParams = new URLSearchParams(queryString);
     const idCompte = urlParams.get('idCompte')
 
+    // ------------------------------------------ Collecte Info Discussion
     function usingDataMessage(xhttp) {
         const myObj = JSON.parse(xhttp.responseText);
 
     }
+
+    var jsonInfoDiscussion = {action:"INFODISCUSSION", idDiscussion:idCompte};
+    sendAjaxJSON("PHP/compteAdmin.php", usingDataMessage, jsonInfoDiscussion);
 }
