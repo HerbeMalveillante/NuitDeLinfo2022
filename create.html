@@ -25,20 +25,45 @@
 
 			// ------------------------------------------ Check Session ------------------------------------------
 			function usingCheckSession(xhttp) {
+				console.log(xhttp.responseText);
 				const dataRetrieved = JSON.parse(xhttp.responseText);
-				const myObj = dataRetrieved["data"];
-				const nbDiscussion = dataRetrieved["nbDiscussion"];
+				console.log(dataRetrieved);
 			}
 
 			var jsonCheckSession = {
-				action: "DISCUSSION",
-				recherche: "",
-				page: 1,
+				action: "post",
+				titre: "",
+				description: "",
+				categories: [],
 			};
 
-			window.onload = function () {
-				sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
-			};
+			//window.onload = function () {
+			//	sendAjaxJSON("PHP/discussion.php", usingCheckSession, jsonCheckSession);
+			//};
+
+			function submit() {
+				var titre = document.getElementById("titre").value;
+				var description = document.getElementById("description").value;
+				var categories = [];
+				if (document.getElementById("question").checked) {
+					categories.push("question");
+				}
+				if (document.getElementById("temoignage").checked) {
+					categories.push("temoignage");
+				}
+				if (document.getElementById("information").checked) {
+					categories.push("information");
+				}
+				if (document.getElementById("humour").checked) {
+					categories.push("humour");
+				}
+
+				jsonCheckSession.titre = titre;
+				jsonCheckSession.description = description;
+				jsonCheckSession.categories = categories;
+
+				sendAjaxJSON("PHP/creation_discussion.php", usingCheckSession, jsonCheckSession);
+			}
 		</script>
 	</head>
 	<body class="p-0 m-0 h-screen">
@@ -61,34 +86,36 @@
 		</nav>
 		<!-- End of the navbar -->
 
-		<div class="flex flex-col p-2 gap-3 mt-10">
+		<div class="flex flex-col p-2 gap-3 mt-10 w-full">
 			<h1 class="text-pink-800 font-bold text-3xl">Créer un post</h1>
 			<input
+				id="titre"
 				class="bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-2"
 				type="text"
 				placeholder="Titre du post"
 			/>
 			<textarea
+				id="description"
 				class="bg-gray-200 border-2 border-gray-400 text-gray-500 rounded-md p-2"
 				rows="10"
 				placeholder="Contenu du post"
 			></textarea>
 			<h2 class="text-pink-800 font-bold text-xl">Catégories</h2>
-			<div class="flex gap-3 justify-center items-center">
+			<div class="grid grid-cols-2 gap-3 justify-center items-center">
 				<div class="flex items-center gap-1">
-					<input type="checkbox" />
+					<input id="question" type="checkbox" />
 					<span>Question</span>
 				</div>
 				<div class="flex items-center gap-1">
-					<input type="checkbox" />
+					<input id="temoignage" type="checkbox" />
 					<span>Témoignage</span>
 				</div>
 				<div class="flex items-center gap-1">
-					<input type="checkbox" />
+					<input id="information" type="checkbox" />
 					<span>Information</span>
 				</div>
 				<div class="flex items-center gap-1">
-					<input type="checkbox" />
+					<input id="humour" type="checkbox" />
 					<span>Humour</span>
 				</div>
 			</div>
@@ -108,5 +135,7 @@
 				<p>Publier</p>
 			</div>
 		</div>
+
+		<script></script>
 	</body>
 </html>
