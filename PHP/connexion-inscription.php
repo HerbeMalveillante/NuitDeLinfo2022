@@ -11,6 +11,23 @@ $data = json_decode($_POST["json"], true);
 
 $action = $data['action'];
 
+if ($data['action']=="SESSION" ) {
+
+	// Il n'y a pas de session
+	if (!isset($_SESSION['username'])) {
+		$jsonError = ["response" => 1];
+
+		echo json_encode($jsonError);
+
+		exit();
+	} else {
+		$jsonError = ["response" => 0];
+		echo json_encode($jsonError);
+
+		exit();
+	}
+}
+
 if ($action == "connexion"){
     $user = trim($data['pseudo']);
     $mdp = trim($data['mdp']);
