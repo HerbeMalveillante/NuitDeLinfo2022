@@ -12,15 +12,19 @@ $data = json_decode($_POST["json"], true);
 $action = $data['action'];
 
 if ($action == "connexion"){
-    $user =trim($data['pseudo']);
-    $mdp = trim($data['mdp']);
-    connexion($user, $mdp);
-}
-elseif ($action == "creation compte"){
     $user = trim($data['pseudo']);
     $mdp = trim($data['mdp']);
-    creation_compte($user, $mdp);
-};
+    
+    $req = "SELECT COUNT(username) as nb FROM compte WHERE username LIKE '$user'";
+    $rep = sgbd_execute_requete($req);
+
+    if (mysqli_fetch_array($rep)['nb'] == 0){ //si le pseudo n'est pas présent dans la base, on créé un nouveau compte
+        creation_compte($user, $mdp);
+    }
+    else{ //sinon on connecte l'utilisateur sur son compte
+        connexion($user, $mdp);
+    }
+}
 
 
 function connexion($user, $mdp){
