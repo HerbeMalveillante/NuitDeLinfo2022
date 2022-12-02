@@ -6,36 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-		<script>
-			function sendAjaxJSON(url, cFunction, donnees) {
-				// url : url du fichier php
-				// cFunction : nom de la fct qui utilise les données renvoyées, "" si pas de fct
-				// donnees : json des données à envoyer
-				const xhttp = new XMLHttpRequest();
-				if (cFunction!="") {
-					xhttp.onload = function () {
-						cFunction(this);
-					};
-				}
-				xhttp.open("POST", url);
-				xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-				xhttp.send("json=" + encodeURIComponent(JSON.stringify(donnees)));
-			}
-
-			// ------------------------------------------ Check Session ------------------------------------------
-			function usingCheckSession(xhttp) {
-				const myObj = JSON.parse(xhttp.responseText);
-
-				console.log(myObj);
-			}
-
-			const jsonCheckSession = {action:"INFODISCUSSION", idDiscussion:1};
-
-			window.onload = function () {
-				sendAjaxJSON("PHP/message.php", "", jsonCheckSession);
-			};
-		</script>
 	</head>
 	<body class="">
 		<h1 id="variable"></h1>
